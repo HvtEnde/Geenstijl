@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class MusicSettings : MonoBehaviour
+public class MusicSet : MonoBehaviour
 {
-
 
     public AudioMixer musicMixer;
     public float musicSaver;
