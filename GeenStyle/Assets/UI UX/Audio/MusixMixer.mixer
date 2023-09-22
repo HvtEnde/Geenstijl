@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music volume
+  m_Name: MusixMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -17,7 +17,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: ea64ff80922f7b743956726f236a6cd2
-    name: Music volume
+    name: Music
   m_AudioMixerGroupViews:
   - guids:
     - 9a2878613fb636242845c1f62dee5a59
@@ -39,7 +39,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 3
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -67,5 +67,5 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: c47b5dc050e083f47bdec9612f262b5f
   m_FloatValues:
-    ce4e671ec320e3b488322067d97f0200: -10.345207
+    ce4e671ec320e3b488322067d97f0200: 0
   m_TransitionOverrides: {}
