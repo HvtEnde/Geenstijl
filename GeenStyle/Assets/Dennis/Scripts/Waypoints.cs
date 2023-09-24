@@ -13,6 +13,7 @@ public class Waypoints : MonoBehaviour
     [SerializeField]
     private float minDist;
     private NavMeshAgent agent;
+    private WaveSpawner waveSpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +24,15 @@ public class Waypoints : MonoBehaviour
         minDist = 3f;
         curDes = -1;
         GoToNextPoint();
+        waveSpawner = GetComponentInParent<WaveSpawner>();
     }
 
     void GoToNextPoint()
     {
         if (curDes == numberOfPoints - 1)
         {
+            Destroy(gameObject);
+            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
             return;
         }
         else
