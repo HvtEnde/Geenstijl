@@ -9,19 +9,18 @@ public class SFXSet : MonoBehaviour
     public AudioMixer sfxMixer;
     public float sfxSaver;
     public Slider sfxSlider;
-    void Start()
+
+    public void Start()
     {
         sfxSlider.value = PlayerPrefs.GetFloat("SFX", sfxSaver);
     }
-
     public void SetVolume(float sfx)
     {
         sfxMixer.SetFloat("SFX", sfx);
         sfxSaver = sfx;
-        PlayerPrefsSet();
+        SfxPlayerPrefsSet();
     }
-
-    public void PlayerPrefsSet()
+    public void SfxPlayerPrefsSet()
     {
         PlayerPrefs.SetFloat("SFX", sfxSaver);
     }
