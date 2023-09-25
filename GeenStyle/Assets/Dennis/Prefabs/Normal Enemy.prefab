@@ -137,7 +137,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6462658834528531998}
@@ -228,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00efaa8d1ffc3d744be904d2cc81ebc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
+  waypointParent: {fileID: 0}
+  targets:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -241,7 +242,6 @@ MonoBehaviour:
   numberOfPoints: 0
   curDes: 0
   minDist: 0
-  waypointArray: []
 --- !u!195 &8337464589326675605
 NavMeshAgent:
   m_ObjectHideFlags: 0

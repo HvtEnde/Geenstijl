@@ -13,7 +13,7 @@ public class WaveSpawner : MonoBehaviour
     public int currentWaveIndex = 0;
 
     private bool readytoCountdown;
-
+    #region Start and Update
     private void Start()
     {
         readytoCountdown = true;
@@ -52,7 +52,9 @@ public class WaveSpawner : MonoBehaviour
             currentWaveIndex++;
         }
     }
+    #endregion
 
+    #region SpawnWave
     private IEnumerator SpawnWave()
     {
         if (currentWaveIndex < waves.Length)
@@ -68,6 +70,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 }
+#endregion
 
 [System.Serializable]
 
