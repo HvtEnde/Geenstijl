@@ -14,9 +14,10 @@ public class Waypoints : MonoBehaviour
     private float minDist;
     private NavMeshAgent agent;
     private WaveSpawner waveSpawner;
+    public GameObject[] waypointArray;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         numberOfPoints = waypoints.Length;
