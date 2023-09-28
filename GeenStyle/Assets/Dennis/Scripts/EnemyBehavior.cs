@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Waypoints : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 
 {
     public GameObject waypointParent;
@@ -17,7 +17,7 @@ public class Waypoints : MonoBehaviour
     private NavMeshAgent agent;
     private WaveSpawner waveSpawner;
 
-    // Start is called before the first frame update
+    #region Awake & Update
     void Awake()
     {
         waypointParent = GameObject.Find("Waypoints");
@@ -25,7 +25,7 @@ public class Waypoints : MonoBehaviour
         numberOfPoints = waypointParent.transform.childCount;
         agent.autoBraking = false;
         minDist = 3f;
-        curDes = 0;
+        curDes = -1;
         for(int i = 0; i < waypointParent.transform.childCount; i++)
         {
             targets[i] = waypointParent.transform.GetChild(i).transform;
@@ -34,6 +34,14 @@ public class Waypoints : MonoBehaviour
         GoToNextPoint();
     }
 
+
+    void Update()
+    {
+        CheckDistance();
+    }
+    #endregion
+
+    #region Next Waypoint
     void GoToNextPoint()
     {
         if (curDes == numberOfPoints - 1)
@@ -49,13 +57,9 @@ public class Waypoints : MonoBehaviour
         }
 
     }
+    #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckDistance();
-    }
-
+    #region Distance Check
     void CheckDistance()
     {
         if(Vector3.Distance(transform.position, targets [curDes].position) < minDist)
@@ -63,4 +67,5 @@ public class Waypoints : MonoBehaviour
             GoToNextPoint();
         }
     }
+    #endregion
 }
