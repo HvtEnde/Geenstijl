@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class TurretBehavior : MonoBehaviour
 {
+    private PlayerControls playerControls;
     private Transform target;
 
     [Header("Attributes")]
     public float range = 15f;
     public float fireRate = 1f;
-    private float fireCountdown = 0f;
+    private float fireCountdown = 1f;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemies";
@@ -21,10 +24,11 @@ public class TurretBehavior : MonoBehaviour
     public Transform firePoint;
 
 
-    // Start is called before the first frame update
+    #region Start and Update
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        playerControls = new PlayerControls();
     }
 
     // Update is called once per frame
@@ -47,12 +51,22 @@ public class TurretBehavior : MonoBehaviour
 
         fireCountdown -= Time.deltaTime;
     }
+    #endregion
 
+    #region Turret Shooting
     void ShootTurret()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-    }
+        GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        BulletBehavior bullet = bulletGO.GetComponent<BulletBehavior>();
 
+        if (bullet != null)
+        {
+            bullet.Seek(target);
+        }
+    }
+    #endregion
+
+    #region Turret Lock On
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -78,10 +92,25 @@ public class TurretBehavior : MonoBehaviour
             target = null;
         }
     }
+    #endregion
 
+    #region Gizmo
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+    #endregion
+
+    #region Mem Leaks
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+    #endregion
 }

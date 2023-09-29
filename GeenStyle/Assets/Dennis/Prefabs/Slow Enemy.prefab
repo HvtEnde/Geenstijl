@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3427345383194012057}
   - component: {fileID: 5705933877022302514}
   - component: {fileID: 1726969811715721442}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,10 +119,9 @@ GameObject:
   - component: {fileID: 3625626985638710262}
   - component: {fileID: 5488622664078495413}
   - component: {fileID: 1328243567013984444}
-  - component: {fileID: 3684674280480267339}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Slow Enemy
-  m_TagString: Enemy
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,15 +263,3 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3684674280480267339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7887831185037137572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f68314c22db9b4da869a7f51b0798b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
