@@ -5,9 +5,10 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     private Transform target;
+    [SerializeField]
+    GameObject turretType;
 
     public float speed = 70f;
-    public int bulletDamage = 1;
 
     //[Header("Particles Input")]
     //public GameObject turretParticle;
@@ -47,7 +48,10 @@ public class BulletBehavior : MonoBehaviour
         //GameObject particleInstance = Instantiate(turretParticle, transform.position, transform.rotation);
         //Destroy(particleInstance, 2f);
         //Damage Gebaseerd op basis van turret type.
-        Destroy(target.gameObject);
+        
+        float weaponDamage = turretType.GetComponent<TurretBehavior>().weaponDamage;
+        target.GetComponent<EnemyBehavior>().health -= weaponDamage;
+
         Destroy(gameObject);
     }
 }

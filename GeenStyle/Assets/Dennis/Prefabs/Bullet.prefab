@@ -96,5 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3af459899733f43a0c9ccd2e3ca1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretType: {fileID: 6516407357744674777, guid: 2ba1e1a8404d0674281026cb3ba147c1,
+    type: 3}
   speed: 70
-  waveSpawner: {fileID: 0}

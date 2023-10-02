@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     public Transform[] targets;
     public int numberOfPoints;
     public int curDes;
+    public float health;
     [SerializeField]
     private float minDist;
     private NavMeshAgent agent;
@@ -38,6 +39,12 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         CheckDistance();
+
+        if(health <= 0)
+        {
+            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+            Destroy(gameObject);
+        }
     }
     #endregion
 
@@ -46,8 +53,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (curDes == numberOfPoints - 1)
         {
-            Destroy(gameObject);
             waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+            Destroy(gameObject);
             return;
         }
         else
@@ -57,6 +64,9 @@ public class EnemyBehavior : MonoBehaviour
         }
 
     }
+
+
+
     #endregion
 
     #region Distance Check

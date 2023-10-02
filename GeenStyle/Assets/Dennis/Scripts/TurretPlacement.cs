@@ -1,33 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class TurretPlacement : MonoBehaviour
 {
-    [SerializeField] Camera sceneCamera;
     private PlayerControls playerControls;
+
+    [SerializeField]
+    private Camera sceneCamera;
+
+    public bool turretButton = false;
+
+    [SerializeField]
+    private GameObject mouseIndicator;
+    [SerializeField]
+    private InputManager inputManager;
 
     public GameObject turretPrefab;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         playerControls = new PlayerControls();
+        playerControls.Player.Select.performed += x => TowerPlacement();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (turretPrefab != null)
-        {
-
-        }
+        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+        mouseIndicator.transform.position = mousePosition;
     }
 
-    void TurretOnClick(GameObject turret)
+    public void TurretOnClick(GameObject turret)
     {
-        turretPrefab = Instantiate(turret, Vector3.zero, Quaternion.identity);
+        if (turretButton == false)
+        {
+            turretButton = true;
+        }
+        else
+        {
+            turretButton = false;
+        }
+        mouseIndicator.SetActive(true);
+    }
+
+    void TowerPlacement()
+    {
+        if (turretPrefab != null)
+        {
+            if (turretButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+                if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+                {
+                    Instantiate(turretPrefab, hit.point, Quaternion.identity);
+                }
+            }
+            turretButton = false;
+            mouseIndicator.SetActive(false);
+        }
     }
 
     #region Mem Leaks
