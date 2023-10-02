@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 
 public class TurretBehavior : MonoBehaviour
 {
-    private PlayerControls playerControls;
     private Transform target;
 
     [Header("Attributes")]
@@ -28,7 +27,6 @@ public class TurretBehavior : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        playerControls = new PlayerControls();
     }
 
     // Update is called once per frame
@@ -99,18 +97,6 @@ public class TurretBehavior : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
-    }
-    #endregion
-
-    #region Mem Leaks
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Disable();
     }
     #endregion
 }

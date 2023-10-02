@@ -17,9 +17,6 @@ public class EnemyBehavior : MonoBehaviour
     private NavMeshAgent agent;
     private WaveSpawner waveSpawner;
 
-    public int healthSpider = 5;
-    public int healthBDragon = 10;
-
     #region Awake & Update
     void Awake()
     {
