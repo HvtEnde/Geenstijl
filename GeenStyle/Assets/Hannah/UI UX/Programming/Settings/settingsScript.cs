@@ -10,7 +10,7 @@ public class settingsScript : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
-    
+
 
     [Header("Resolutions")]
     public TMPro.TMP_Dropdown resolutionDropdown;
@@ -18,6 +18,7 @@ public class settingsScript : MonoBehaviour
     private List<Resolution> filteredResolution;
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
+
 
     public void Start()
     {
