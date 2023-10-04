@@ -168,7 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCamera: {fileID: 1759176754}
+  cantPlace:
+    serializedVersion: 2
+    m_Bits: 8
   turretButton: 0
+  turretplacementCooldown: 0
   mouseIndicator: {fileID: 1806556744}
   inputManager: {fileID: 777606779}
   turretPrefab: {fileID: 6516407357744674777, guid: 2ba1e1a8404d0674281026cb3ba147c1,
@@ -647,9 +651,9 @@ GameObject:
   - component: {fileID: 547756714}
   - component: {fileID: 547756713}
   - component: {fileID: 547756712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (5)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1294,9 +1298,9 @@ GameObject:
   - component: {fileID: 1052433112}
   - component: {fileID: 1052433111}
   - component: {fileID: 1052433110}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (7)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,9 +1529,9 @@ GameObject:
   - component: {fileID: 1515206461}
   - component: {fileID: 1515206460}
   - component: {fileID: 1515206459}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (4)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1630,9 +1634,9 @@ GameObject:
   - component: {fileID: 1586366106}
   - component: {fileID: 1586366105}
   - component: {fileID: 1586366104}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1830,9 +1834,9 @@ GameObject:
   - component: {fileID: 1668785957}
   - component: {fileID: 1668785956}
   - component: {fileID: 1668785955}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (3)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1935,9 +1939,9 @@ GameObject:
   - component: {fileID: 1711956101}
   - component: {fileID: 1711956100}
   - component: {fileID: 1711956099}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (1)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2040,9 +2044,9 @@ GameObject:
   - component: {fileID: 1728104140}
   - component: {fileID: 1728104139}
   - component: {fileID: 1728104138}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (8)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2298,7 +2302,7 @@ Transform:
   m_GameObject: {fileID: 1806556744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2321,7 +2325,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2423,9 +2427,9 @@ GameObject:
   - component: {fileID: 1949950513}
   - component: {fileID: 1949950512}
   - component: {fileID: 1949950511}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (2)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2528,9 +2532,9 @@ GameObject:
   - component: {fileID: 2032705021}
   - component: {fileID: 2032705020}
   - component: {fileID: 2032705019}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path (6)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

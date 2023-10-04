@@ -14,6 +14,7 @@ public class TurretPlacement : MonoBehaviour
     private Camera sceneCamera;
 
     public bool turretButton = false;
+    public float turretplacementCooldown = 2f;
 
     [SerializeField]
     private GameObject mouseIndicator;
@@ -56,10 +57,13 @@ public class TurretPlacement : MonoBehaviour
             if (turretButton == true)
             {
                 Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-                if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    Instantiate(turretPrefab, hit.point, Quaternion.identity);
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    {
+                        Instantiate(turretPrefab, hit.point, Quaternion.identity);
+                    }
                 }
             }
             turretButton = false;

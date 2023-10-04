@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7927468459565880101}
   - component: {fileID: 8930511913187307784}
   - component: {fileID: 4402236745758795929}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2397140990248706435}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,9 +125,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5847147156299623779}
   - component: {fileID: 6660055003087399697}
-  m_Layer: 0
+  - component: {fileID: -2373213664034413030}
+  m_Layer: 3
   m_Name: Sniper Turret
-  m_TagString: Untagged
+  m_TagString: Towers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 6516407357744674777}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.59281, y: 0.29412937, z: 2.224359}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -170,6 +171,27 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7403219430570618897, guid: 0f0ba18533f32d540bd0751cc0a4e7e9,
     type: 3}
   firePoint: {fileID: 2397140990248706435}
+--- !u!65 &-2373213664034413030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516407357744674777}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!1 &6711462589384358124
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +203,7 @@ GameObject:
   - component: {fileID: 7301632187748693510}
   - component: {fileID: 2065404388969332888}
   - component: {fileID: 7615525065199754311}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
