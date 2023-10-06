@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class TurretPlacement : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class TurretPlacement : MonoBehaviour
     private Camera sceneCamera;
 
     public bool turretButton = false;
-    public float turretplacementCooldown = 2f;
 
     [SerializeField]
     private GameObject mouseIndicator;
@@ -37,7 +37,7 @@ public class TurretPlacement : MonoBehaviour
         mouseIndicator.transform.position = mousePosition;
     }
 
-    public void TurretOnClick(GameObject turret)
+    public void TurretOnClick()
     {
         if (turretButton == false)
         {

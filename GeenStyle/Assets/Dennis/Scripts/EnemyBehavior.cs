@@ -25,7 +25,7 @@ public class EnemyBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         numberOfPoints = waypointParent.transform.childCount;
         agent.autoBraking = false;
-        minDist = 3f;
+        minDist = 1.5f;
         curDes = -1;
         for(int i = 0; i < waypointParent.transform.childCount; i++)
         {
