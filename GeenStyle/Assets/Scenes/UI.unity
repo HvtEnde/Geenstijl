@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -204,7 +204,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 122840122}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1112370140}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1396440259}
+        m_TargetAssemblyTypeName: MenuToGame, Assembly-CSharp
+        m_MethodName: ToMainGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &122840122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3161,6 +3185,7 @@ GameObject:
   - component: {fileID: 1396440253}
   - component: {fileID: 1396440255}
   - component: {fileID: 1396440258}
+  - component: {fileID: 1396440259}
   m_Layer: 0
   m_Name: Buttonscripts
   m_TagString: Untagged
@@ -3253,6 +3278,18 @@ MonoBehaviour:
   musicSlider: {fileID: 1969026318}
   sfxSlider: {fileID: 143387437}
   resolutionDropdown: {fileID: 1057969563}
+--- !u!114 &1396440259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396440249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3bb4ad72192d44da552fd9cfdfb257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1407177126
 GameObject:
   m_ObjectHideFlags: 0
