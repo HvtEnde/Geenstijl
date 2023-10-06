@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuToGame : MonoBehaviour
+public class SelectToGame : MonoBehaviour
 {
     
 
