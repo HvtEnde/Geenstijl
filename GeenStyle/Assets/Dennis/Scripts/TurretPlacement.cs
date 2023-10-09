@@ -14,14 +14,14 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField]
     private Camera sceneCamera;
 
-    public bool turretButton = false;
+    public bool regularTurretButton, sniperTurretButton = false;
 
     [SerializeField]
     private GameObject mouseIndicator;
     [SerializeField]
     private InputManager inputManager;
 
-    public GameObject turretPrefab;
+    public GameObject turretPrefab, sniperPrefab;
 
 
     void Awake()
@@ -37,24 +37,39 @@ public class TurretPlacement : MonoBehaviour
         mouseIndicator.transform.position = mousePosition;
     }
 
-    public void TurretOnClick()
+    public void TurretOnClickRegular()
     {
-        if (turretButton == false)
+        if (regularTurretButton == false)
         {
-            turretButton = true;
+            regularTurretButton = true;
+            mouseIndicator.SetActive(true);
         }
         else
         {
-            turretButton = false;
+            regularTurretButton = false;
+            mouseIndicator.SetActive(false);
         }
-        mouseIndicator.SetActive(true);
+    }
+
+    public void TurretOnClickSniper()
+    {
+        if (regularTurretButton == false)
+        {
+            sniperTurretButton = true;
+            mouseIndicator.SetActive(true);
+        }
+        else
+        {
+            sniperTurretButton = false;
+            mouseIndicator.SetActive(false);
+        }
     }
 
     void TowerPlacement()
     {
         if (turretPrefab != null)
         {
-            if (turretButton == true)
+            if (regularTurretButton == true)
             {
                 Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 RaycastHit hit;
@@ -66,7 +81,25 @@ public class TurretPlacement : MonoBehaviour
                     }
                 }
             }
-            turretButton = false;
+            regularTurretButton = false;
+            mouseIndicator.SetActive(false);
+        }
+
+        if (sniperPrefab != null)
+        {
+            if (sniperTurretButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
+                {
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    {
+                        Instantiate(sniperPrefab, hit.point, Quaternion.identity);
+                    }
+                }
+            }
+            sniperTurretButton = false;
             mouseIndicator.SetActive(false);
         }
     }
