@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 43c5c0d18bc83c84cbbb290b218c846b, type: 2}
+  - {fileID: 2100000, guid: 10d469750b8b1d348999e6cc2fce472d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8577a775adb81e45a768294a68f3467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 7.5
+  range: 6
   fireRate: 0.5
   weaponDamage: 2
   enemyTag: Enemies
@@ -253,7 +253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 43c5c0d18bc83c84cbbb290b218c846b, type: 2}
+  - {fileID: 2100000, guid: 10d469750b8b1d348999e6cc2fce472d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
