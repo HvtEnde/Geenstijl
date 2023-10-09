@@ -35,6 +35,7 @@ public class TurretPlacement : MonoBehaviour
     {
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         mouseIndicator.transform.position = mousePosition;
+        OnHoverMouseColor();
     }
 
     public void TurretOnClickRegular()
@@ -62,6 +63,26 @@ public class TurretPlacement : MonoBehaviour
         {
             sniperTurretButton = false;
             mouseIndicator.SetActive(false);
+        }
+    }
+
+    void OnHoverMouseColor()
+    {
+        if (mouseIndicator.activeInHierarchy)
+        {
+            Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit hit;
+            if (Physics.Raycast(ray,out hit, 100f))
+            {
+                if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                {
+                    mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
+                }
+                else
+                {
+                    mouseIndicator.GetComponent<Renderer>().material.color = Color.red;
+                }
+            }
         }
     }
 
