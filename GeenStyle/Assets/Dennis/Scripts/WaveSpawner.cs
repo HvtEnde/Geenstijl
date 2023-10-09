@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private float countdown;
 
     [SerializeField] private GameObject spawnPoint;
+
+    [SerializeField] GameObject placeholderWinText;
 
     public Wave[] waves;
 
@@ -29,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (currentWaveIndex >= waves.Length)
         {
-            Debug.Log("Waves Completed");
+            placeholderWinText.SetActive(true);
             return;
         }
 
