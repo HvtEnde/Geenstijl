@@ -15,6 +15,7 @@ public class ToturialScript : MonoBehaviour
 
     public void Update()
     {
+        timer -= Time.deltaTime;
         if(timer <= 0f)
         {
             tot.SetActive(false);
