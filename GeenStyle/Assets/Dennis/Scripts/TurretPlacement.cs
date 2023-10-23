@@ -14,14 +14,14 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField]
     private Camera sceneCamera;
 
-    public bool regularTurretButton, sniperTurretButton = false;
+    public bool regularTurretButton, sniperTurretButton, flamethrowerTurretButton, landmineButton = false;
 
     [SerializeField]
     private GameObject mouseIndicator;
     [SerializeField]
     private InputManager inputManager;
 
-    public GameObject turretPrefab, sniperPrefab;
+    public GameObject turretPrefab, sniperPrefab, flamethrowerPrefab, landminePrefab;
 
 
     void Awake()
@@ -66,21 +66,72 @@ public class TurretPlacement : MonoBehaviour
         }
     }
 
+    public void TurretOnClickFlamethrower()
+    {
+        if (flamethrowerTurretButton == false)
+        {
+            flamethrowerTurretButton = true;
+            mouseIndicator.SetActive(true);
+        }
+        else
+        {
+            flamethrowerTurretButton = false;
+            mouseIndicator.SetActive(false);
+        }
+    }
+
+    public void TurretOnClickLandmine()
+    {
+        if (landmineButton == false)
+        {
+            landmineButton = true;
+            mouseIndicator.SetActive(true);
+        }
+        else
+        {
+            landmineButton = false;
+            mouseIndicator.SetActive(false);
+        }
+    }
+
     void OnHoverMouseColor()
     {
         if (mouseIndicator.activeInHierarchy)
         {
-            Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            RaycastHit hit;
-            if (Physics.Raycast(ray,out hit, 100f))
+            if (regularTurretButton || sniperTurretButton || flamethrowerTurretButton == true)
             {
-                if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
+                    }
+                    else
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.red;
+                    }
                 }
-                else
+            }
+        }
+
+        if (mouseIndicator.activeInHierarchy)
+        {
+            if (landmineButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    mouseIndicator.GetComponent<Renderer>().material.color = Color.red;
+                    if (hit.collider.CompareTag("Path"))
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
+                    }
+                    else
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.red;
+                    }
                 }
             }
         }
@@ -121,6 +172,42 @@ public class TurretPlacement : MonoBehaviour
                 }
             }
             sniperTurretButton = false;
+            mouseIndicator.SetActive(false);
+        }
+
+        if (flamethrowerPrefab != null)
+        {
+            if (flamethrowerTurretButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
+                {
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    {
+                        Instantiate(flamethrowerPrefab, hit.point, Quaternion.identity);
+                    }
+                }
+            }
+            flamethrowerTurretButton = false;
+            mouseIndicator.SetActive(false);
+        }
+
+        if (landminePrefab != null)
+        {
+            if (landmineButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
+                {
+                    if (hit.collider.CompareTag("Path"))
+                    {
+                        Instantiate(landminePrefab, hit.point, Quaternion.identity);
+                    }
+                }
+            }
+            landmineButton = false;
             mouseIndicator.SetActive(false);
         }
     }

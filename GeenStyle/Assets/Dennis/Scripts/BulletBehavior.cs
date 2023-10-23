@@ -11,10 +11,7 @@ public class BulletBehavior : MonoBehaviour
     public float speed = 70f;
 
     //[Header("Particles Input")]
-    //public GameObject turretParticle;
-    //public GameObject sniperParticle;
-    //public GameObject flamethrowerParticle;
-    //public GameObject landmineParticle;
+    //public GameObject turretParticle, sniperParticle, flamethrowerParticle;
 
     public void Seek(Transform _target)
     {
@@ -47,8 +44,7 @@ public class BulletBehavior : MonoBehaviour
     {
         //GameObject particleInstance = Instantiate(turretParticle, transform.position, transform.rotation);
         //Destroy(particleInstance, 2f);
-        //Damage Gebaseerd op basis van turret type.
-        
+
         float weaponDamage = turretType.GetComponent<TurretBehavior>().weaponDamage;
         target.GetComponent<EnemyBehavior>().health -= weaponDamage;
 
