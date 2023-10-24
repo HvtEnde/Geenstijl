@@ -11,17 +11,21 @@ public class TurretPlacement : MonoBehaviour
 {
     private PlayerControls playerControls;
 
+    [Header("Attributes")]
     [SerializeField]
     private Camera sceneCamera;
-
-    public bool regularTurretButton, sniperTurretButton, flamethrowerTurretButton, landmineButton = false;
-
     [SerializeField]
     private GameObject mouseIndicator;
     [SerializeField]
     private InputManager inputManager;
 
-    public GameObject turretPrefab, sniperPrefab, flamethrowerPrefab, landminePrefab;
+    private bool regularTurretButton, sniperTurretButton, flamethrowerTurretButton, landmineButton = false;
+
+    [Header("Prefabs")]
+    public GameObject turretPrefab;
+    public GameObject sniperPrefab;
+    public GameObject flamethrowerPrefab;
+    public GameObject landminePrefab;
 
 
     void Awake()
