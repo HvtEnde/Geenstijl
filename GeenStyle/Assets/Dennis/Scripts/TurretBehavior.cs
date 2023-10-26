@@ -7,11 +7,19 @@ using UnityEngine.Rendering;
 public class TurretBehavior : MonoBehaviour
 {
     private Transform target;
+    private EnemyBehavior targetEnemy;
 
-    [Header("Attributes")]
-    public float range = 15f;
-    public float fireRate = 1f;
-    private float fireCountdown = 1f;
+    [Header("General")]
+    public float range;
+
+    [Header("Bullets (default)")]
+    public float fireRate;
+    private float fireCountdown = 0f;
+
+    [Header("Flamethrower")]
+    public bool useFlamethrower = false;
+    public LineRenderer lineRenderer;
+
     public float weaponDamage;
 
     [Header("Unity Setup Fields")]
@@ -34,24 +42,43 @@ public class TurretBehavior : MonoBehaviour
     void Update()
     {
         if (target == null)
+        {
+            if (useFlamethrower)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                }
+            }
             return;
-        
-        //Target Lock On
+        }
+
+        LockOnTarget();
+
+        if (useFlamethrower)
+        {
+            FlamethrowerShoot();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                ShootTurret();
+                fireCountdown = 1f / fireRate;
+            }
+
+            fireCountdown -= Time.deltaTime;
+        }
+    }
+    #endregion
+
+    void LockOnTarget()
+    {
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        if (fireCountdown <= 0f)
-        {
-            ShootTurret();
-            fireCountdown = 1f / fireRate;
-        }
-
-        fireCountdown -= Time.deltaTime;
     }
-    #endregion
-
     #region Turret Shooting
     void ShootTurret()
     {
@@ -62,6 +89,19 @@ public class TurretBehavior : MonoBehaviour
         {
             bullet.Seek(target);
         }
+    }
+
+    void FlamethrowerShoot()
+    {
+        targetEnemy.TakeDamage(weaponDamage * Time.deltaTime);
+
+        if (lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+        }
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
     }
     #endregion
 
@@ -85,6 +125,7 @@ public class TurretBehavior : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<EnemyBehavior>();
         }
         else
         {

@@ -8967,7 +8967,7 @@ MonoBehaviour:
     type: 3}
   sniperPrefab: {fileID: 6516407357744674777, guid: 2ba1e1a8404d0674281026cb3ba147c1,
     type: 3}
-  flamethrowerPrefab: {fileID: 113172581094451716, guid: 7795daa6495fad94abe23bd979343fff,
+  flamethrowerPrefab: {fileID: 4869788219566621417, guid: 4c2ff137fcd24f141908b8647411fdac,
     type: 3}
   landminePrefab: {fileID: 7961097227272394359, guid: 4e3f9a6e99cb339458ef791e722fe436,
     type: 3}
