@@ -27,7 +27,13 @@ public class TurretPlacement : MonoBehaviour
     public GameObject flamethrowerPrefab;
     public GameObject landminePrefab;
 
+    [Header("Turret Costs")]
+    public int turretCost = 100;
+    public int sniperCost = 125;
+    public int flamethrowerCost = 150;
+    public int landmineCost = 75;
 
+    #region Awake & Update
     void Awake()
     {
         playerControls = new PlayerControls();
@@ -41,7 +47,9 @@ public class TurretPlacement : MonoBehaviour
         mouseIndicator.transform.position = mousePosition;
         OnHoverMouseColor();
     }
+    #endregion
 
+    #region Button Clicks
     public void TurretOnClickRegular()
     {
         if (regularTurretButton == false)
@@ -97,7 +105,9 @@ public class TurretPlacement : MonoBehaviour
             mouseIndicator.SetActive(false);
         }
     }
+    #endregion
 
+    #region Hover Color
     void OnHoverMouseColor()
     {
         if (mouseIndicator.activeInHierarchy)
@@ -108,7 +118,47 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= turretCost)
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
+                    }
+                    else
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.red;
+                    }
+                }
+            }
+        }
+
+        if (mouseIndicator.activeInHierarchy)
+        {
+            if (sniperTurretButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
+                {
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= sniperCost)
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
+                    }
+                    else
+                    {
+                        mouseIndicator.GetComponent<Renderer>().material.color = Color.red;
+                    }
+                }
+            }
+        }
+
+        if (mouseIndicator.activeInHierarchy)
+        {
+            if (flamethrowerTurretButton == true)
+            {
+                Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100f))
+                {
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= flamethrowerCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
                     }
@@ -128,7 +178,7 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    if (hit.collider.CompareTag("Path"))
+                    if (hit.collider.CompareTag("Path") && PlayerStats.money >= landmineCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
                     }
@@ -140,7 +190,9 @@ public class TurretPlacement : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Tower Placement
     void TowerPlacement()
     {
         if (turretPrefab != null)
@@ -153,7 +205,17 @@ public class TurretPlacement : MonoBehaviour
                 {
                     if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
                     {
+                        if (PlayerStats.money < turretCost)
+                        {
+                            Debug.Log("Not enough currency");
+                            mouseIndicator.SetActive(false);
+                            return;
+                        }
+                        PlayerStats.money -= turretCost;
+
                         Instantiate(turretPrefab, hit.point, Quaternion.identity);
+
+                        Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
                 }
             }
@@ -171,7 +233,17 @@ public class TurretPlacement : MonoBehaviour
                 {
                     if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
                     {
+                        if (PlayerStats.money < sniperCost)
+                        {
+                            Debug.Log("Not enough currency");
+                            mouseIndicator.SetActive(false);
+                            return;
+                        }
+                        PlayerStats.money -= sniperCost;
+
                         Instantiate(sniperPrefab, hit.point, Quaternion.identity);
+
+                        Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
                 }
             }
@@ -189,7 +261,17 @@ public class TurretPlacement : MonoBehaviour
                 {
                     if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
                     {
+                        if (PlayerStats.money < flamethrowerCost)
+                        {
+                            Debug.Log("Not enough currency");
+                            mouseIndicator.SetActive(false);
+                            return;
+                        }
+                        PlayerStats.money -= flamethrowerCost;
+
                         Instantiate(flamethrowerPrefab, hit.point, Quaternion.identity);
+
+                        Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
                 }
             }
@@ -207,7 +289,17 @@ public class TurretPlacement : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("Path"))
                     {
+                        if (PlayerStats.money < landmineCost)
+                        {
+                            Debug.Log("Not enough currency");
+                            mouseIndicator.SetActive(false);
+                            return;
+                        }
+                        PlayerStats.money -= landmineCost;
+
                         Instantiate(landminePrefab, hit.point, Quaternion.identity);
+
+                        Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
                 }
             }
@@ -215,6 +307,7 @@ public class TurretPlacement : MonoBehaviour
             mouseIndicator.SetActive(false);
         }
     }
+    #endregion
 
     #region Mem Leaks
     private void OnEnable()

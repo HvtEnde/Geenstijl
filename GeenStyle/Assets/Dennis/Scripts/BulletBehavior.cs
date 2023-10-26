@@ -10,6 +10,8 @@ public class BulletBehavior : MonoBehaviour
 
     public float speed = 70f;
 
+    public int weaponDamage;
+
     //[Header("Particles Input")]
     //public GameObject turretParticle, sniperParticle, flamethrowerParticle;
 
@@ -45,9 +47,18 @@ public class BulletBehavior : MonoBehaviour
         //GameObject particleInstance = Instantiate(turretParticle, transform.position, transform.rotation);
         //Destroy(particleInstance, 2f);
 
-        float weaponDamage = turretType.GetComponent<TurretBehavior>().weaponDamage;
-        target.GetComponent<EnemyBehavior>().health -= weaponDamage;
+        Damage(target);
 
         Destroy(gameObject);
+    }
+
+    void Damage(Transform enemy)
+    {
+        EnemyBehavior e = enemy.GetComponent<EnemyBehavior>();
+
+        if (e != null)
+        {
+            e.TakeDamage(weaponDamage);
+        }
     }
 }

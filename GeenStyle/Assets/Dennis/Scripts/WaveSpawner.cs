@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    [SerializeField] private float countdown;
-
-    [SerializeField] private GameObject spawnPoint;
-
-    [SerializeField] GameObject placeholderWinText;
+    [SerializeField] 
+    private float countdown;
+    [SerializeField] 
+    private GameObject spawnPoint;
+    [SerializeField] 
+    GameObject placeholderWinText;
 
     public Wave[] waves;
 
     public int currentWaveIndex = 0;
 
     private bool readytoCountdown;
+
     #region Start and Update
     private void Start()
     {

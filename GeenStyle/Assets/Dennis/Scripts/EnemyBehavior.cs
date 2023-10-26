@@ -4,23 +4,33 @@ using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyBehavior : MonoBehaviour
 
 {
+    [Header("Auto-Fill")]
     public GameObject waypointParent;
     public Transform[] targets;
+
+    [Header("Attributes")]
     public int numberOfPoints;
     public int curDes;
+    public float startHealth;
     public float health;
+    public int worthAmount;
+    public Image healthBar;
+
     [SerializeField]
     private float minDist;
     private NavMeshAgent agent;
     private WaveSpawner waveSpawner;
+    private bool isDead = false;
 
     #region Awake & Update
     void Awake()
     {
+        health = startHealth;
         waypointParent = GameObject.Find("Waypoints");
         agent = GetComponent<NavMeshAgent>();
         numberOfPoints = waypointParent.transform.childCount;
@@ -39,14 +49,22 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         CheckDistance();
+    }
+    #endregion
 
-        if(health <= 0)
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+
+        healthBar.fillAmount = health / startHealth;
+
+        if (health <= 0 && !isDead)
         {
             waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+            PlayerStats.money += worthAmount;
             Destroy(gameObject);
         }
     }
-    #endregion
 
     #region Next Waypoint
     void GoToNextPoint()
@@ -64,9 +82,6 @@ public class EnemyBehavior : MonoBehaviour
         }
 
     }
-
-
-
     #endregion
 
     #region Distance Check
