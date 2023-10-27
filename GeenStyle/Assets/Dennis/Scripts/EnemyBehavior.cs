@@ -72,6 +72,7 @@ public class EnemyBehavior : MonoBehaviour
         if (curDes == numberOfPoints - 1)
         {
             waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+            PlayerStats.lives -= 1;
             Destroy(gameObject);
             return;
         }
