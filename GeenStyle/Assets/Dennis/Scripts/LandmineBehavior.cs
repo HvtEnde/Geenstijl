@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class LandmineBehavior : MonoBehaviour
 {
+    private Transform target;
     [SerializeField]
     private GameObject landminePrefab, landmineParticle;
     [SerializeField]
@@ -12,29 +14,33 @@ public class LandmineBehavior : MonoBehaviour
     public float weaponDamage;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemies")
         {
-            //audio.PlayOneshot(explosion);
-            //GameObject particleInstance = Instantiate(landmineParticle, transform.position, transform.rotation);
-            //Destroy(particleInstance, 2f);
+            target = other.GetComponent<Transform>();
+            HitTarget();
+        }
+    }
 
-            other.GetComponent<EnemyBehavior>().health -= weaponDamage;
+    void HitTarget()
+    {
+        //audio.PlayOneshot(explosion);
+        //GameObject particleInstance = Instantiate(landmineParticle, transform.position, transform.rotation);
+        //Destroy(particleInstance, 2f);
 
-            Destroy(gameObject);
+        Damage(target);
+
+        Destroy(gameObject);
+    }
+
+    void Damage(Transform enemy)
+    {
+        EnemyBehavior e = enemy.GetComponent<EnemyBehavior>();
+
+        if (e != null)
+        {
+            e.TakeDamage(weaponDamage);
         }
     }
 }

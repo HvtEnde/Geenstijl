@@ -164,7 +164,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 6
   fireRate: 0.5
-  weaponDamage: 2
+  useFlamethrower: 0
+  lineRenderer: {fileID: 0}
+  flamethrowerParticle: {fileID: 0}
+  weaponDamage: 0
   enemyTag: Enemies
   partToRotate: {fileID: 7927468459565880101}
   turnSpeed: 10

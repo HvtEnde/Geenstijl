@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3af459899733f43a0c9ccd2e3ca1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretType: {fileID: 6516407357744674777, guid: 2ba1e1a8404d0674281026cb3ba147c1,
+  turretType: {fileID: 113172581094451716, guid: 16a3adaea4a78a84e9e63392f9f2ecf4,
     type: 3}
-  speed: 70
-  weaponDamage: 2
+  speed: 30
+  weaponDamage: 1

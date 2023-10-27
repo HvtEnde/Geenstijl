@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2796508061421561327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.089, y: 0.166, z: 0}
+  m_LocalPosition: {x: 0, y: 1.125, z: 1.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,7 +196,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   fireRate: 1
-  weaponDamage: 1
+  useFlamethrower: 0
+  lineRenderer: {fileID: 0}
+  flamethrowerParticle: {fileID: 0}
+  weaponDamage: 0
   enemyTag: Enemies
   partToRotate: {fileID: 5284241070693977976}
   turnSpeed: 10

@@ -8,12 +8,12 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField]
     GameObject turretType;
 
-    public float speed = 70f;
+    public float speed;
 
-    public int weaponDamage;
+    public float weaponDamage;
 
     //[Header("Particles Input")]
-    //public GameObject turretParticle, sniperParticle, flamethrowerParticle;
+    //public GameObject bulletParticle;
 
     public void Seek(Transform _target)
     {
@@ -44,7 +44,7 @@ public class BulletBehavior : MonoBehaviour
 
     void HitTarget()
     {
-        //GameObject particleInstance = Instantiate(turretParticle, transform.position, transform.rotation);
+        //GameObject particleInstance = Instantiate(bulletParticle, transform.position, transform.rotation);
         //Destroy(particleInstance, 2f);
 
         Damage(target);
