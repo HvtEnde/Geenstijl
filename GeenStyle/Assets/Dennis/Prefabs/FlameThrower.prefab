@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4584431484625042}
   - component: {fileID: 198637950067575458}
   - component: {fileID: 199982541912562440}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FlameThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4801,7 +4801,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3349fc02d104e2b458470ec533f51c16, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4863,7 +4862,7 @@ GameObject:
   - component: {fileID: 4691803356102260}
   - component: {fileID: 198214374999220926}
   - component: {fileID: 199192134335169774}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireEmbers (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9552,7 +9551,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 776677ab3818fb249adaca05f4e04545, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9614,7 +9612,7 @@ GameObject:
   - component: {fileID: 4452672904288642}
   - component: {fileID: 198548992791813314}
   - component: {fileID: 199711072805571688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

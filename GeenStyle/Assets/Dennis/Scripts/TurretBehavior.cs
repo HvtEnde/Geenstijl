@@ -19,6 +19,7 @@ public class TurretBehavior : MonoBehaviour
     [Header("Flamethrower")]
     public bool useFlamethrower = false;
     public LineRenderer lineRenderer;
+    public ParticleSystem flamethrowerParticle;
 
     public float weaponDamage;
 
@@ -48,6 +49,7 @@ public class TurretBehavior : MonoBehaviour
                 if (lineRenderer.enabled)
                 {
                     lineRenderer.enabled = false;
+                    flamethrowerParticle.Stop();
                 }
             }
             return;
@@ -95,13 +97,15 @@ public class TurretBehavior : MonoBehaviour
     {
         targetEnemy.TakeDamage(weaponDamage * Time.deltaTime);
 
-        if (lineRenderer.enabled)
+        if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
+            flamethrowerParticle.Play();
         }
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
+
     }
     #endregion
 
