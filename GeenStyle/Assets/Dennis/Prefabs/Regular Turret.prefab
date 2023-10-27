@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+  turretCost: 100
   fireRate: 1
   useFlamethrower: 0
   lineRenderer: {fileID: 0}

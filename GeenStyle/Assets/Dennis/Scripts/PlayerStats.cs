@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
     public static int money;
-    public int startMoney = 200;
+    public int startMoney = 250;
     public TMP_Text moneyText;
 
     public static int lives;

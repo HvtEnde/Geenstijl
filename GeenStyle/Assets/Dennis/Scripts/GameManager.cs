@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject hudUI, gameOverUI;
 
-    // Update is called once per frame
+
     void Update()
     {
         if (gameEnded)

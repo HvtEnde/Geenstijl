@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6
+  turretCost: 150
   fireRate: 0.5
   useFlamethrower: 0
   lineRenderer: {fileID: 0}

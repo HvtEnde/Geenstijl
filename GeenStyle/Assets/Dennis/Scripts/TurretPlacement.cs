@@ -18,6 +18,8 @@ public class TurretPlacement : MonoBehaviour
     private GameObject mouseIndicator;
     [SerializeField]
     private InputManager inputManager;
+    [SerializeField]
+    private GameObject placementSystem;
 
     private bool regularTurretButton, sniperTurretButton, flamethrowerTurretButton, landmineButton = false;
 
@@ -213,7 +215,9 @@ public class TurretPlacement : MonoBehaviour
                         }
                         PlayerStats.money -= turretCost;
 
-                        Instantiate(turretPrefab, hit.point, Quaternion.identity);
+                        GameObject placedTurret = Instantiate(turretPrefab, hit.point, Quaternion.identity);
+
+                        placedTurret.transform.SetParent(placementSystem.transform);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
@@ -241,7 +245,9 @@ public class TurretPlacement : MonoBehaviour
                         }
                         PlayerStats.money -= sniperCost;
 
-                        Instantiate(sniperPrefab, hit.point, Quaternion.identity);
+                        GameObject placedTurret = Instantiate(sniperPrefab, hit.point, Quaternion.identity);
+
+                        placedTurret.transform.SetParent(placementSystem.transform);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
@@ -269,7 +275,9 @@ public class TurretPlacement : MonoBehaviour
                         }
                         PlayerStats.money -= flamethrowerCost;
 
-                        Instantiate(flamethrowerPrefab, hit.point, Quaternion.identity);
+                        GameObject placedTurret = Instantiate(flamethrowerPrefab, hit.point, Quaternion.identity);
+
+                        placedTurret.transform.SetParent(placementSystem.transform);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
@@ -297,7 +305,9 @@ public class TurretPlacement : MonoBehaviour
                         }
                         PlayerStats.money -= landmineCost;
 
-                        Instantiate(landminePrefab, hit.point, Quaternion.identity);
+                        GameObject placedTurret = Instantiate(landminePrefab, hit.point, Quaternion.identity);
+
+                        placedTurret.transform.SetParent(placementSystem.transform);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }

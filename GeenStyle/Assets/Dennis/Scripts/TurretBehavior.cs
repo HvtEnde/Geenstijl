@@ -11,6 +11,7 @@ public class TurretBehavior : MonoBehaviour
 
     [Header("General")]
     public float range;
+    public int turretCost;
 
     [Header("Bullets (default)")]
     public float fireRate;

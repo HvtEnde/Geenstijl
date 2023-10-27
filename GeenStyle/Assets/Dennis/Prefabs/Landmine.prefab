@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8465504852527855522}
   - component: {fileID: 862056709075933139}
   - component: {fileID: -1039357363353298197}
+  - component: {fileID: -5635020961119476498}
   m_Layer: 3
   m_Name: Landmine
   m_TagString: Towers
@@ -122,3 +123,27 @@ MonoBehaviour:
   landmineParticle: {fileID: 0}
   explosion: {fileID: 0}
   weaponDamage: 2
+--- !u!114 &-5635020961119476498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961097227272394359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8577a775adb81e45a768294a68f3467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  turretCost: 50
+  fireRate: 0
+  useFlamethrower: 0
+  lineRenderer: {fileID: 0}
+  flamethrowerParticle: {fileID: 0}
+  weaponDamage: 0
+  enemyTag: Enemies
+  partToRotate: {fileID: 0}
+  turnSpeed: 10
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
