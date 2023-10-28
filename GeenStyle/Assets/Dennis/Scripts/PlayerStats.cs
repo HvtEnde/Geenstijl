@@ -5,12 +5,15 @@ using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Player Money")]
     public static int money;
     public int startMoney = 250;
     public TMP_Text moneyText;
 
+    [Header("Player Life")]
     public static int lives;
     public int startLives = 3;
+    public TMP_Text lifeText;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +26,6 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         moneyText.text = "AU$" + PlayerStats.money.ToString();
+        lifeText.text = PlayerStats.lives.ToString();
     }
 }
