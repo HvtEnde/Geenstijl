@@ -39,7 +39,7 @@ public class TurretPlacement : MonoBehaviour
     void Awake()
     {
         playerControls = new PlayerControls();
-        playerControls.Player.Select.performed += x => TowerPlacement();
+        playerControls.Player.Place.performed += x => TowerPlacement();
     }
 
     // Update is called once per frame

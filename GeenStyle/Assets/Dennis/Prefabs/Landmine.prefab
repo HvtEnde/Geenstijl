@@ -119,10 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84f47b36d6109144983f57a80a3bad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landminePrefab: {fileID: 7961097227272394359}
   landmineParticle: {fileID: 0}
   explosion: {fileID: 0}
-  weaponDamage: 2
+  weaponDamage: 1
 --- !u!114 &-5635020961119476498
 MonoBehaviour:
   m_ObjectHideFlags: 0

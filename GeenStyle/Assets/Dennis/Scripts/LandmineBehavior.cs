@@ -7,7 +7,7 @@ public class LandmineBehavior : MonoBehaviour
 {
     private Transform target;
     [SerializeField]
-    private GameObject landminePrefab, landmineParticle;
+    private GameObject landmineParticle;
     [SerializeField]
     private AudioClip explosion;
 

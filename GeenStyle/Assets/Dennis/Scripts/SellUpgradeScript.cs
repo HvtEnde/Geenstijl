@@ -11,6 +11,7 @@ public class SellUpgradeScript : MonoBehaviour
     [Header("Attributes")]
     [SerializeField]
     private Camera sceneCamera;
+    [SerializeField]
 
     [Header("UI Attributes")]
     public GameObject selectUI;
@@ -35,7 +36,6 @@ public class SellUpgradeScript : MonoBehaviour
                 if (hit.collider.tag == "Towers")
                 {
                     target = hit.transform.gameObject;
-                    Debug.Log(target.transform.name);
                     selectUI.transform.position = hit.collider.transform.position;
                     selectUI.SetActive(true);
                 }
@@ -53,10 +53,6 @@ public class SellUpgradeScript : MonoBehaviour
                     target = hit.transform.gameObject;
                     selectUI.transform.position = hit.collider.transform.position;
                     selectUI.SetActive(true);
-                }
-                else
-                {
-                    return;
                 }
             }
         }
