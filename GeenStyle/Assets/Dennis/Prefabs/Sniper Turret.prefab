@@ -164,14 +164,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 6
   turretCost: 150
-  useBullets: 1
+  useBullet: 1
   fireRate: 0.5
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
   flamethrowerParticle: {fileID: 0}
   weaponDamage: 0
-  useLandMine: 0
-  landinePrefab: {fileID: 0}
+  useLandmine: 0
   landmineParticle: {fileID: 0}
   landmineSFX: {fileID: 0}
   enemyTag: Enemies

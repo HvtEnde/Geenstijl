@@ -11,7 +11,6 @@ public class SellUpgradeScript : MonoBehaviour
     [Header("Attributes")]
     [SerializeField]
     private Camera sceneCamera;
-    [SerializeField]
 
     [Header("UI Attributes")]
     public GameObject selectUI;

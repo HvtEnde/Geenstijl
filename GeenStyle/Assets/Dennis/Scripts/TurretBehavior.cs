@@ -14,6 +14,7 @@ public class TurretBehavior : MonoBehaviour
     public int turretCost;
 
     [Header("Bullets (default)")]
+    public bool useBullet = false;
     public float fireRate;
     private float fireCountdown = 0f;
 
@@ -23,6 +24,13 @@ public class TurretBehavior : MonoBehaviour
     public ParticleSystem flamethrowerParticle;
 
     public float weaponDamage;
+
+    [Header("Landmine")]
+    public bool useLandmine = false;
+    [SerializeField]
+    private GameObject landmineParticle;
+    [SerializeField]
+    private AudioClip landmineSFX;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemies";
@@ -56,13 +64,12 @@ public class TurretBehavior : MonoBehaviour
             return;
         }
 
-        LockOnTarget();
-
-        if (useFlamethrower)
+        if (useBullet || useFlamethrower)
         {
-            FlamethrowerShoot();
+            LockOnTarget();
         }
-        else
+
+        if (useBullet)
         {
             if (fireCountdown <= 0f)
             {
@@ -71,6 +78,16 @@ public class TurretBehavior : MonoBehaviour
             }
 
             fireCountdown -= Time.deltaTime;
+        }
+
+        if (useFlamethrower)
+        {
+            FlamethrowerShoot();
+        }
+
+        if (useLandmine)
+        {
+            Landmine();
         }
     }
     #endregion
@@ -82,7 +99,8 @@ public class TurretBehavior : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
-    #region Turret Shooting
+
+    #region Turret Mechanics
     void ShootTurret()
     {
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -107,6 +125,28 @@ public class TurretBehavior : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
 
+    }
+
+    void Landmine()
+    {
+        //audio.PlayOneshot(landmineSFX);
+        //GameObject particleInstance = Instantiate(landmineParticle, transform.position, transform.rotation);
+        //Destroy(particleInstance, 2f);
+
+        targetEnemy = target.GetComponent<EnemyBehavior>();
+
+        targetEnemy.TakeDamage(weaponDamage);
+
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider targetEnemy)
+    {
+        if (targetEnemy.tag == "Enemies")
+        {
+            target = targetEnemy.GetComponent<Transform>();
+            Landmine();
+        }
     }
     #endregion
 

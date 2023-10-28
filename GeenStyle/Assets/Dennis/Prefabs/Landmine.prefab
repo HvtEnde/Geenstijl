@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5953605352377566056}
   - component: {fileID: 8465504852527855522}
   - component: {fileID: 862056709075933139}
-  - component: {fileID: -1039357363353298197}
   - component: {fileID: -5635020961119476498}
   m_Layer: 3
   m_Name: Landmine
@@ -107,21 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.5, z: 0.6}
   m_Center: {x: 0, y: 0.25, z: 0}
---- !u!114 &-1039357363353298197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7961097227272394359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84f47b36d6109144983f57a80a3bad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  landmineParticle: {fileID: 0}
-  explosion: {fileID: 0}
-  weaponDamage: 1
 --- !u!114 &-5635020961119476498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,11 +120,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 0
   turretCost: 50
+  useBullet: 0
   fireRate: 0
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
   flamethrowerParticle: {fileID: 0}
-  weaponDamage: 0
+  weaponDamage: 1
+  useLandmine: 1
+  landmineParticle: {fileID: 0}
+  landmineSFX: {fileID: 0}
   enemyTag: Enemies
   partToRotate: {fileID: 0}
   turnSpeed: 10
