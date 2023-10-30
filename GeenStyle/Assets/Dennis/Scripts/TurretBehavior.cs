@@ -147,10 +147,13 @@ public class TurretBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider targetEnemy)
     {
-        if (targetEnemy.tag == "Enemies")
+        if (useLandmine)
         {
-            target = targetEnemy.GetComponent<Transform>();
-            Landmine();
+            if (targetEnemy.tag == "Enemies")
+            {
+                target = targetEnemy.GetComponent<Transform>();
+                Landmine();
+            }
         }
     }
     #endregion
