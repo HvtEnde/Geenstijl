@@ -14,5 +14,6 @@ public class GameOverScript : MonoBehaviour
     public void QuitGame()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
 }
