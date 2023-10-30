@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8577a775adb81e45a768294a68f3467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
+  range: 3
   turretCost: 100
   turretUpgrade: {fileID: 113172581094451716, guid: 7795daa6495fad94abe23bd979343fff,
     type: 3}
