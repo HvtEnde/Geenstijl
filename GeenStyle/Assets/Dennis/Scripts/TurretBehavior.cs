@@ -21,10 +21,12 @@ public class TurretBehavior : MonoBehaviour
     public bool useBullet = false;
     public float fireRate;
     private float fireCountdown = 0f;
+    public AudioSource bulletSFX;
 
     [Header("Flamethrower")]
     public bool useFlamethrower = false;
     public LineRenderer lineRenderer;
+    public AudioSource flamethrowerSFX;
     public ParticleSystem flamethrowerParticle;
 
     public float weaponDamage;
@@ -32,9 +34,9 @@ public class TurretBehavior : MonoBehaviour
     [Header("Landmine")]
     public bool useLandmine = false;
     [SerializeField]
-    private GameObject landmineParticle;
+    private GameObject landmineParticle, landmineSFXGO;
     [SerializeField]
-    private AudioClip landmineSFX;
+    private AudioSource landmineSFX;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemies";
@@ -62,6 +64,7 @@ public class TurretBehavior : MonoBehaviour
                 if (lineRenderer.enabled)
                 {
                     lineRenderer.enabled = false;
+                    flamethrowerSFX.Stop();
                     flamethrowerParticle.Stop();
                 }
             }
@@ -102,6 +105,8 @@ public class TurretBehavior : MonoBehaviour
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         BulletBehavior bullet = bulletGO.GetComponent<BulletBehavior>();
 
+        bulletSFX.Play();
+
         if (bullet != null)
         {
             bullet.Seek(target);
@@ -115,6 +120,7 @@ public class TurretBehavior : MonoBehaviour
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
+            flamethrowerSFX.Play();
             flamethrowerParticle.Play();
         }
 
@@ -125,11 +131,14 @@ public class TurretBehavior : MonoBehaviour
 
     void Landmine()
     {
-        //audio.PlayOneshot(landmineSFX);
         //GameObject particleInstance = Instantiate(landmineParticle, transform.position, transform.rotation);
         //Destroy(particleInstance, 2f);
 
         targetEnemy = target.GetComponent<EnemyBehavior>();
+
+        GameObject landmineSFXGO = GameObject.Find("LandmineSFX");
+        landmineSFX = landmineSFXGO.GetComponent<AudioSource>();
+        landmineSFX.Play();
 
         targetEnemy.TakeDamage(weaponDamage);
 

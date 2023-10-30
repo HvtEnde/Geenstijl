@@ -21,7 +21,8 @@ public class PauseMenu : MonoBehaviour
 
     void PauseGame()
     {
-         pauseUI.SetActive(!pauseUI.activeSelf);
+        pauseUI.SetActive(!pauseUI.activeSelf);
+        Debug.Log("Pause Menu activated");
 
         if (pauseUI.activeSelf)
         {

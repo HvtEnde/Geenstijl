@@ -106,6 +106,8 @@ public class SellUpgradeScript : MonoBehaviour
                 return;
             }
 
+            PlayerStats.money -= turretCost;
+
             GameObject turretUpgrade = target.GetComponent<TurretBehavior>().turretUpgrade;
 
             GameObject placedTurret = Instantiate(turretUpgrade, target.transform.position, Quaternion.identity);

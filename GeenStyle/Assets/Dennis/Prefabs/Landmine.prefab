@@ -127,10 +127,12 @@ MonoBehaviour:
   fireRate: 0
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
+  flamethrowerSFX: {fileID: 0}
   flamethrowerParticle: {fileID: 0}
   weaponDamage: 1
   useLandmine: 1
   landmineParticle: {fileID: 0}
+  landmineSFXGO: {fileID: 0}
   landmineSFX: {fileID: 0}
   enemyTag: Enemies
   partToRotate: {fileID: 0}
