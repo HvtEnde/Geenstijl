@@ -10,6 +10,10 @@ public class SelectToGame : MonoBehaviour
     
     public void ToMainGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(2);
+    }
+    public void ToLevel2()
+    {
+        
     }
 }
