@@ -162,13 +162,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8577a775adb81e45a768294a68f3467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 6
+  range: 4
   turretCost: 150
   turretUpgrade: {fileID: 6516407357744674777, guid: 98ee38c7d27f9c3478f4364e8de203ba,
     type: 3}
   turretUpgraded: 0
   useBullet: 1
-  fireRate: 0.5
+  fireRate: 0.25
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
   flamethrowerParticle: {fileID: 0}

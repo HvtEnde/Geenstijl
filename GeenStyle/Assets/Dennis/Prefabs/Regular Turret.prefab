@@ -200,7 +200,7 @@ MonoBehaviour:
     type: 3}
   turretUpgraded: 0
   useBullet: 1
-  fireRate: 1
+  fireRate: 0.5
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
   flamethrowerParticle: {fileID: 0}
