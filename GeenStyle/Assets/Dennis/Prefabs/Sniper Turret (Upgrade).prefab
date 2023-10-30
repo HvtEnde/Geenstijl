@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 6660055003087399697}
   - component: {fileID: -2373213664034413030}
   m_Layer: 3
-  m_Name: Sniper Turret
+  m_Name: Sniper Turret (Upgrade)
   m_TagString: Towers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7301632187748693510}
@@ -162,13 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8577a775adb81e45a768294a68f3467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 6
-  turretCost: 150
-  turretUpgrade: {fileID: 6516407357744674777, guid: 98ee38c7d27f9c3478f4364e8de203ba,
-    type: 3}
-  turretUpgraded: 0
+  range: 8
+  turretCost: 300
+  turretUpgrade: {fileID: 0}
+  turretUpgraded: 1
   useBullet: 1
-  fireRate: 0.5
+  fireRate: 1
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
   flamethrowerParticle: {fileID: 0}
@@ -179,7 +178,7 @@ MonoBehaviour:
   enemyTag: Enemies
   partToRotate: {fileID: 7927468459565880101}
   turnSpeed: 10
-  bulletPrefab: {fileID: 7403219430570618897, guid: 0f0ba18533f32d540bd0751cc0a4e7e9,
+  bulletPrefab: {fileID: 7403219430570618897, guid: 078dd8502c8b256499f522145493aedb,
     type: 3}
   firePoint: {fileID: 2397140990248706435}
 --- !u!65 &-2373213664034413030

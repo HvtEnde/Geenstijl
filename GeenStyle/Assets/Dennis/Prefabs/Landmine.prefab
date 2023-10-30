@@ -120,6 +120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 0
   turretCost: 50
+  turretUpgrade: {fileID: 7961097227272394359, guid: c739d7f41af34194fa1b353d5f1e5b3e,
+    type: 3}
+  turretUpgraded: 0
   useBullet: 0
   fireRate: 0
   useFlamethrower: 0

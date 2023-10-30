@@ -13,6 +13,10 @@ public class TurretBehavior : MonoBehaviour
     public float range;
     public int turretCost;
 
+    [Header("Upgrade")]
+    public GameObject turretUpgrade;
+    public bool turretUpgraded = false;
+
     [Header("Bullets (default)")]
     public bool useBullet = false;
     public float fireRate;
@@ -92,14 +96,6 @@ public class TurretBehavior : MonoBehaviour
     }
     #endregion
 
-    void LockOnTarget()
-    {
-        Vector3 direction = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-    }
-
     #region Turret Mechanics
     void ShootTurret()
     {
@@ -151,6 +147,13 @@ public class TurretBehavior : MonoBehaviour
     #endregion
 
     #region Turret Lock On
+    void LockOnTarget()
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);

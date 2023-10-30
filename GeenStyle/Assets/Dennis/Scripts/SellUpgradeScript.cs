@@ -7,6 +7,8 @@ public class SellUpgradeScript : MonoBehaviour
 {
     private PlayerControls playerControls;
     public GameObject target;
+    [SerializeField]
+    private GameObject placementSystem;
 
     [Header("Attributes")]
     [SerializeField]
@@ -74,7 +76,16 @@ public class SellUpgradeScript : MonoBehaviour
     #region Sell & Upgrade Turret
     public void SellTurret()
     {
+        bool turretUpgraded = target.GetComponent<TurretBehavior>().turretUpgraded;
         if (target)
+        {
+            int turretCost = target.GetComponent<TurretBehavior>().turretCost;
+            PlayerStats.money += turretCost / 2;
+            selectUI.SetActive(false);
+            Destroy(target);
+        }
+
+        if (turretUpgraded == true)
         {
             int turretCost = target.GetComponent<TurretBehavior>().turretCost;
             PlayerStats.money += turretCost / 2;
@@ -85,7 +96,29 @@ public class SellUpgradeScript : MonoBehaviour
 
     public void UpgradeTurret()
     {
+        int turretCost = target.GetComponent<TurretBehavior>().turretCost;
+        if (target)
+        {
+            if (PlayerStats.money < turretCost)
+            {
+                Debug.Log("Not enough currency");
+                selectUI.SetActive(false);
+                return;
+            }
 
+            GameObject turretUpgrade = target.GetComponent<TurretBehavior>().turretUpgrade;
+
+            GameObject placedTurret = Instantiate(turretUpgrade, target.transform.position, Quaternion.identity);
+
+            placedTurret.transform.SetParent(placementSystem.transform);
+
+            Destroy(target);
+
+            Debug.Log("Turret Upgraded");
+
+            selectUI.SetActive(false);
+
+        }
     }
     #endregion
 

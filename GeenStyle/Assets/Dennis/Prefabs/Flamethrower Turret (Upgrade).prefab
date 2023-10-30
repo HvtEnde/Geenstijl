@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4876585067269386525}
   - component: {fileID: 4037871004870292912}
   m_Layer: 3
-  m_Name: Flamethrower Turret
+  m_Name: Flamethrower Turret (Upgrade)
   m_TagString: Towers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4632646159176967617}
@@ -217,15 +217,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   turretCost: 200
-  turretUpgrade: {fileID: 4869788219566621417, guid: 3b8e84509f29d3c4fa27bbb9abd67496,
-    type: 3}
-  turretUpgraded: 0
+  turretUpgrade: {fileID: 0}
+  turretUpgraded: 1
   useBullet: 0
   fireRate: 1
   useFlamethrower: 1
   lineRenderer: {fileID: 4037871004870292912}
   flamethrowerParticle: {fileID: 1159969860859908335}
-  weaponDamage: 0.25
+  weaponDamage: 0.5
   useLandmine: 0
   landmineParticle: {fileID: 0}
   landmineSFX: {fileID: 0}
