@@ -1,50 +1,96 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
     private PlayerControls playerControls;
+    private InputAction ui;
 
     [Header("Attributes")]
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
     private GameObject hudUI;
+    [SerializeField]
+    private GameObject settingsUI;
+    [SerializeField]
+    private GameObject tutorialUI;
+    [SerializeField]
+    private bool isPaused;
 
+    #region Awake
     void Awake()
     {
         playerControls = new PlayerControls();
-        playerControls.UI.Pause.performed += x => PauseGame();
     }
+    #endregion
 
-    void PauseGame()
+    #region Pause Functionality
+    void PauseGame(InputAction.CallbackContext context)
     {
-        pauseUI.SetActive(!pauseUI.activeSelf);
-        Debug.Log("Pause Menu activated");
+        isPaused = !isPaused;
 
-        if (pauseUI.activeSelf)
+        if (isPaused)
         {
-            hudUI.SetActive(false);
-            Time.timeScale = 0f;
-
+            ActivatePauseUI();
         }
         else
         {
-            hudUI.SetActive(true);
-            Time.timeScale = 1f;
+            DeactivatePauseUI();
         }
     }
 
-    public void Retry()
+    void ActivatePauseUI()
     {
-        PauseGame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        hudUI.SetActive(false);
+        Time.timeScale = 0;
+        pauseUI.SetActive(true);
+        ui.Disable();
     }
 
+    public void DeactivatePauseUI()
+    {
+        hudUI?.SetActive(true);
+        Time.timeScale = 1;
+        pauseUI.SetActive(false);
+        isPaused = false;
+        ui.Enable();
+    }
+    #endregion
+
+    #region Button Functions
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
+    public void SettingsInGame()
+    {
+        pauseUI.SetActive(false);
+        settingsUI.SetActive(true);
+    }
 
     public void QuitGame()
     {
-        PauseGame();
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
+    #endregion
+
+    #region Enable/Disable
+    private void OnEnable()
+    {
+        ui = playerControls.UI.Pause;
+        ui.Enable();
+
+        ui.performed += PauseGame;
+    }
+
+    private void OnDisable()
+    {
+        ui.Disable();
+    }
+    #endregion
 }
