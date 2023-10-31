@@ -15,8 +15,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject settingsUI;
     [SerializeField]
-    private GameObject tutorialUI;
-    [SerializeField]
     private bool isPaused;
 
     #region Awake
