@@ -332,7 +332,7 @@ MonoBehaviour:
   turretUpgrade: {fileID: 0}
   turretUpgraded: 1
   useBullet: 1
-  fireRate: 0.75
+  fireRate: 1
   bulletSFX: {fileID: 5364484950991787428}
   useFlamethrower: 0
   lineRenderer: {fileID: 0}
