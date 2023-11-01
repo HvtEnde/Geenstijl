@@ -130,7 +130,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   flamethrowerSFX: {fileID: 0}
   flamethrowerParticle: {fileID: 0}
-  weaponDamage: 2
+  weaponDamage: 4
   useLandmine: 1
   landmineParticle: {fileID: 0}
   landmineSFXGO: {fileID: 0}

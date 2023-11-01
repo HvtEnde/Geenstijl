@@ -29,4 +29,9 @@ public class GameManager : MonoBehaviour
         hudUI.SetActive(false);
         gameOverUI.SetActive(true);
     }
+
+    public void WinLevel()
+    {
+        PlayerPrefs.SetInt("levelReached", 2);
+    }
 }

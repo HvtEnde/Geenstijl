@@ -482,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00efaa8d1ffc3d744be904d2cc81ebc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthCanvas: {fileID: 4141663909721491001}
   waypointParent: {fileID: 0}
   targets:
   - {fileID: 0}
@@ -495,7 +496,7 @@ MonoBehaviour:
   - {fileID: 0}
   numberOfPoints: 0
   curDes: 0
-  startHealth: 5
+  startHealth: 7
   health: 0
   worthAmount: 50
   healthBar: {fileID: 3987385301536494659}
@@ -510,8 +511,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 1
-  m_Acceleration: 1.25
+  m_Speed: 1.25
+  m_Acceleration: 1.75
   avoidancePriority: 50
   m_AngularSpeed: 90
   m_StoppingDistance: 0

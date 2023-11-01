@@ -99,4 +99,4 @@ MonoBehaviour:
   turretType: {fileID: 113172581094451716, guid: 7795daa6495fad94abe23bd979343fff,
     type: 3}
   speed: 30
-  weaponDamage: 0.5
+  weaponDamage: 1.25

@@ -14,6 +14,8 @@ public class WaveSpawner : MonoBehaviour
 
     public Wave[] waves;
 
+    public GameManager gameManager;
+
     public int currentWaveIndex = 0;
 
     private bool readytoCountdown;
@@ -35,6 +37,7 @@ public class WaveSpawner : MonoBehaviour
         if (currentWaveIndex >= waves.Length)
         {
             winScreen.SetActive(true);
+            gameManager.WinLevel();
             return;
         }
 

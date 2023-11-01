@@ -9,6 +9,9 @@ using UnityEngine.UI;
 public class EnemyBehavior : MonoBehaviour
 
 {
+    [SerializeField]
+    private Transform healthCanvas;
+
     [Header("Auto-Fill")]
     public GameObject waypointParent;
     public Transform[] targets;
@@ -49,6 +52,11 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         CheckDistance();
+    }
+
+    private void LateUpdate()
+    {
+        healthCanvas.LookAt(transform.position + Camera.main.transform.forward);
     }
     #endregion
 

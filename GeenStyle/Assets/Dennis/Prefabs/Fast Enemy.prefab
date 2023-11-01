@@ -213,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b77cfdccbf2a95a4ca41d6b060df1ecf, type: 2}
+  - {fileID: 2100000, guid: 0b0b6e9e80b3a5946be3e6357069e8b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 8337464589326675605}
   - component: {fileID: -1842286003924648157}
   m_Layer: 0
-  m_Name: Normal Enemy
+  m_Name: Fast Enemy
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6462658834528531998}
@@ -323,7 +323,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b77cfdccbf2a95a4ca41d6b060df1ecf, type: 2}
+  - {fileID: 2100000, guid: 0b0b6e9e80b3a5946be3e6357069e8b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   - {fileID: 0}
   numberOfPoints: 0
   curDes: 0
-  startHealth: 5
+  startHealth: 3
   health: 0
   worthAmount: 25
   healthBar: {fileID: 4032239360124305580}
@@ -409,8 +409,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 2
-  m_Acceleration: 2.5
+  m_Speed: 4
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

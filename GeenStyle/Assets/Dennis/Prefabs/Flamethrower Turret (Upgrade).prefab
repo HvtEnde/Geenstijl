@@ -222,13 +222,15 @@ MonoBehaviour:
   turretUpgraded: 1
   useBullet: 0
   fireRate: 1
+  bulletSFX: {fileID: 0}
   useFlamethrower: 1
   lineRenderer: {fileID: 4037871004870292912}
   flamethrowerSFX: {fileID: 6393002220929244124}
   flamethrowerParticle: {fileID: 1159969860859908335}
-  weaponDamage: 0.5
+  weaponDamage: 0.75
   useLandmine: 0
   landmineParticle: {fileID: 0}
+  landmineSFXGO: {fileID: 0}
   landmineSFX: {fileID: 0}
   enemyTag: Enemies
   partToRotate: {fileID: 4632646159176967617}
