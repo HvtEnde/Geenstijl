@@ -3210,7 +3210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2ff187b23b743448e9252980e48a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
+  sfx: {fileID: 1112370140}
   hoverSfx: {fileID: 8300000, guid: 1b27fe50d339b8b45b731d6b02add292, type: 3}
 --- !u!114 &1396440258
 MonoBehaviour:
@@ -3252,8 +3252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2241ca388940f4245a1d4cc9719f00cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 754587645}
-  select: {fileID: 0}
 --- !u!1 &1407177126
 GameObject:
   m_ObjectHideFlags: 0
