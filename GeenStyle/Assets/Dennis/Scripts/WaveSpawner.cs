@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] 
     private GameObject spawnPoint;
     [SerializeField] 
-    GameObject placeholderWinText;
+    GameObject winScreen;
 
     public Wave[] waves;
 
@@ -34,7 +34,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (currentWaveIndex >= waves.Length)
         {
-            placeholderWinText.SetActive(true);
+            winScreen.SetActive(true);
             return;
         }
 
