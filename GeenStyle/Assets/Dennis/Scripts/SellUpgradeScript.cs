@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class SellUpgradeScript : MonoBehaviour
 {
@@ -75,6 +76,7 @@ public class SellUpgradeScript : MonoBehaviour
     public void SellTurret()
     {
         bool turretUpgraded = target.GetComponent<TurretBehavior>().turretUpgraded;
+
         if (target)
         {
             int turretCost = target.GetComponent<TurretBehavior>().turretCost;
