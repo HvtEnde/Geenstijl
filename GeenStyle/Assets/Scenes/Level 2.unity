@@ -10602,7 +10602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2116905642}
         m_TargetAssemblyTypeName: SellUpgradeScript, Assembly-CSharp
         m_MethodName: SellTurret
         m_Mode: 1
@@ -14356,7 +14356,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2116905642}
         m_TargetAssemblyTypeName: SellUpgradeScript, Assembly-CSharp
         m_MethodName: UpgradeTurret
         m_Mode: 1
