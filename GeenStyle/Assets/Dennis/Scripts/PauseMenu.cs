@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void DeactivatePauseUI()
     {
-        hudUI?.SetActive(true);
+        hudUI.SetActive(true);
         Time.timeScale = 1;
         pauseUI.SetActive(false);
         isPaused = false;

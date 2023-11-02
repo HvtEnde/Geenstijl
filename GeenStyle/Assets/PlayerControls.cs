@@ -302,18 +302,27 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Pause"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""6d2ee913-aa28-4274-be55-d0bf96229c28"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Shop"",
                     ""type"": ""Value"",
                     ""id"": ""143921c6-d4e4-4efe-8af0-ade4b72e96a0"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""DevTool"",
+                    ""type"": ""Value"",
+                    ""id"": ""385ffa10-6d43-49a9-a390-aea42d9fd0cc"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -339,6 +348,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Shop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4feecfbc-099a-41d1-a188-914d37d87b7c"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""DevTool"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -419,6 +439,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_Shop = m_UI.FindAction("Shop", throwIfNotFound: true);
+        m_UI_DevTool = m_UI.FindAction("DevTool", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -560,12 +581,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_Pause;
     private readonly InputAction m_UI_Shop;
+    private readonly InputAction m_UI_DevTool;
     public struct UIActions
     {
         private @PlayerControls m_Wrapper;
         public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputAction @Shop => m_Wrapper.m_UI_Shop;
+        public InputAction @DevTool => m_Wrapper.m_UI_DevTool;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -581,6 +604,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shop.started += instance.OnShop;
             @Shop.performed += instance.OnShop;
             @Shop.canceled += instance.OnShop;
+            @DevTool.started += instance.OnDevTool;
+            @DevTool.performed += instance.OnDevTool;
+            @DevTool.canceled += instance.OnDevTool;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -591,6 +617,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shop.started -= instance.OnShop;
             @Shop.performed -= instance.OnShop;
             @Shop.canceled -= instance.OnShop;
+            @DevTool.started -= instance.OnDevTool;
+            @DevTool.performed -= instance.OnDevTool;
+            @DevTool.canceled -= instance.OnDevTool;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -665,5 +694,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnPause(InputAction.CallbackContext context);
         void OnShop(InputAction.CallbackContext context);
+        void OnDevTool(InputAction.CallbackContext context);
     }
 }

@@ -280,18 +280,27 @@
             "actions": [
                 {
                     "name": "Pause",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "6d2ee913-aa28-4274-be55-d0bf96229c28",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Shop",
                     "type": "Value",
                     "id": "143921c6-d4e4-4efe-8af0-ade4b72e96a0",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "DevTool",
+                    "type": "Value",
+                    "id": "385ffa10-6d43-49a9-a390-aea42d9fd0cc",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -317,6 +326,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Shop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4feecfbc-099a-41d1-a188-914d37d87b7c",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "DevTool",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
