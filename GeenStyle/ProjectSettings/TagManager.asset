@@ -7,6 +7,7 @@ TagManager:
   - Enemies
   - Path
   - Towers
+  - PlaceableGround
   layers:
   - Default
   - TransparentFX

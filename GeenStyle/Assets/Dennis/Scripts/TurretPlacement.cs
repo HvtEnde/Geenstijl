@@ -114,7 +114,7 @@ public class TurretPlacement : MonoBehaviour
     {
         if (mouseIndicator.activeInHierarchy)
         {
-            if (regularTurretButton || sniperTurretButton || flamethrowerTurretButton == true)
+            if (regularTurretButton)
             {
                 Ray ray = sceneCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 RaycastHit hit;
@@ -180,6 +180,7 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
+                    Debug.Log(hit.collider.tag);
                     if (hit.collider.CompareTag("Path") && PlayerStats.money >= landmineCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
