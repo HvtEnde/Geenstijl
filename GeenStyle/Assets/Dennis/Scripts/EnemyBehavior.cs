@@ -74,7 +74,7 @@ public class EnemyBehavior : MonoBehaviour
             waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
             PlayerStats.money += worthAmount;
 
-            //animator.Play("death");
+            animator.SetTrigger("Death");
 
             Destroy(gameObject);
         }
