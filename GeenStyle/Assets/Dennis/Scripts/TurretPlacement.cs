@@ -241,6 +241,12 @@ public class TurretPlacement : MonoBehaviour
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
+                    else
+                    {
+                        regularTurretRange.SetActive(false);
+                        sniperTurretRange.SetActive(false);
+                        flamethrowerTurretRange.SetActive(false);
+                    }
                 }
             }
             regularTurretButton = false;
@@ -276,6 +282,12 @@ public class TurretPlacement : MonoBehaviour
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
+                    else
+                    {
+                        regularTurretRange.SetActive(false);
+                        sniperTurretRange.SetActive(false);
+                        flamethrowerTurretRange.SetActive(false);
+                    }
                 }
             }
             sniperTurretButton = false;
@@ -310,6 +322,12 @@ public class TurretPlacement : MonoBehaviour
                         flamethrowerTurretRange.SetActive(false);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
+                    }
+                    else
+                    {
+                        regularTurretRange.SetActive(false);
+                        sniperTurretRange.SetActive(false);
+                        flamethrowerTurretRange.SetActive(false);
                     }
                 }
             }

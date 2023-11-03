@@ -77,7 +77,7 @@ public class SellUpgradeScript : MonoBehaviour
     {
         bool turretUpgraded = target.GetComponent<TurretBehavior>().turretUpgraded;
 
-        if (target)
+        if (!turretUpgraded)
         {
             int turretCost = target.GetComponent<TurretBehavior>().turretCost;
             PlayerStats.money += turretCost / 2;
@@ -85,7 +85,7 @@ public class SellUpgradeScript : MonoBehaviour
             Destroy(target);
         }
 
-        if (turretUpgraded == true)
+        if (turretUpgraded)
         {
             int turretCost = target.GetComponent<TurretBehavior>().turretCost;
             PlayerStats.money += turretCost / 2;
