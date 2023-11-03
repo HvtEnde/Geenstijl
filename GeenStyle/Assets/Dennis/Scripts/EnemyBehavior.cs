@@ -30,6 +30,9 @@ public class EnemyBehavior : MonoBehaviour
     private WaveSpawner waveSpawner;
     private bool isDead = false;
 
+    [Header("Animations")]
+    public Animator animator;
+
     #region Awake & Update
     void Awake()
     {
@@ -70,6 +73,9 @@ public class EnemyBehavior : MonoBehaviour
         {
             waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
             PlayerStats.money += worthAmount;
+
+            //animator.Play("death");
+
             Destroy(gameObject);
         }
     }

@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 744dac1316b26ac40a1841986c56c3b4, type: 2}
+  - {fileID: 2100000, guid: 4885aa3db1e389e45956249a36b063fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,7 +145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 744dac1316b26ac40a1841986c56c3b4, type: 2}
+  - {fileID: 2100000, guid: 4885aa3db1e389e45956249a36b063fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -229,7 +229,6 @@ MonoBehaviour:
   flamethrowerParticle: {fileID: 1159969860859908335}
   weaponDamage: 0.75
   useLandmine: 0
-  landmineParticle: {fileID: 0}
   landmineSFXGO: {fileID: 0}
   landmineSFX: {fileID: 0}
   enemyTag: Enemies

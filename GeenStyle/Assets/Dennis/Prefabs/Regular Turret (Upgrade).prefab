@@ -257,7 +257,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 59c251d902612ee4b844e794cbcac45d, type: 2}
+      objectReference: {fileID: 2100000, guid: a5a4ead51425f2a4b854df8b41122f24, type: 2}
     - target: {fileID: -199456482056776083, guid: 45c04015b845ca842ac71ef30a9517e9,
         type: 3}
       propertyPath: m_Layer
@@ -287,7 +287,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 59c251d902612ee4b844e794cbcac45d, type: 2}
+      objectReference: {fileID: 2100000, guid: a5a4ead51425f2a4b854df8b41122f24, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -340,7 +340,6 @@ MonoBehaviour:
   flamethrowerParticle: {fileID: 0}
   weaponDamage: 1
   useLandmine: 0
-  landmineParticle: {fileID: 0}
   landmineSFXGO: {fileID: 0}
   landmineSFX: {fileID: 0}
   enemyTag: Enemies
@@ -368,7 +367,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1.5, z: 2}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &781868699199123646 stripped
 Transform:

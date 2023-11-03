@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 45c04015b845ca842ac71ef30a9517e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45c04015b845ca842ac71ef30a9517e9,
         type: 3}
@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 45c04015b845ca842ac71ef30a9517e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45c04015b845ca842ac71ef30a9517e9,
         type: 3}
@@ -341,7 +341,6 @@ MonoBehaviour:
   flamethrowerParticle: {fileID: 0}
   weaponDamage: 0
   useLandmine: 0
-  landmineParticle: {fileID: 0}
   landmineSFXGO: {fileID: 0}
   landmineSFX: {fileID: 0}
   enemyTag: Enemies
@@ -369,8 +368,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &781868699199123646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45c04015b845ca842ac71ef30a9517e9,
