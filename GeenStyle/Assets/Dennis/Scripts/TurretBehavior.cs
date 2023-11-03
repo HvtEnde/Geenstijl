@@ -30,7 +30,7 @@ public class TurretBehavior : MonoBehaviour
     [Header("Landmine")]
     public bool useLandmine = false;
     [SerializeField]
-    private GameObject landmineParticle, landmineSFXGO;
+    private GameObject landmineSFXGO;
     [SerializeField]
     private AudioSource landmineSFX;
 
@@ -127,8 +127,9 @@ public class TurretBehavior : MonoBehaviour
 
     void Landmine()
     {
-        //GameObject particleInstance = Instantiate(landmineParticle, transform.position, transform.rotation);
-        //Destroy(particleInstance, 2f);
+        GameObject landmineParticle = GameObject.Find("Landmine Particle");
+            
+        Instantiate(landmineParticle, transform.position, transform.rotation);
 
         targetEnemy = target.GetComponent<EnemyBehavior>();
 
