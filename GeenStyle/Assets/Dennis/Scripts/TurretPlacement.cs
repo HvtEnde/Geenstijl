@@ -227,6 +227,8 @@ public class TurretPlacement : MonoBehaviour
                             Debug.Log("Not enough currency");
                             mouseIndicator.SetActive(false);
                             regularTurretRange.SetActive(false);
+                            sniperTurretRange.SetActive(false);
+                            flamethrowerTurretRange.SetActive(false);
                             return;
                         }
                         PlayerStats.money -= turretCost;
@@ -259,7 +261,9 @@ public class TurretPlacement : MonoBehaviour
                         {
                             Debug.Log("Not enough currency");
                             mouseIndicator.SetActive(false);
+                            regularTurretRange.SetActive(false);
                             sniperTurretRange.SetActive(false);
+                            flamethrowerTurretRange.SetActive(false);
                             return;
                         }
                         PlayerStats.money -= sniperCost;
@@ -292,6 +296,8 @@ public class TurretPlacement : MonoBehaviour
                         {
                             Debug.Log("Not enough currency");
                             mouseIndicator.SetActive(false);
+                            regularTurretRange.SetActive(false);
+                            sniperTurretRange.SetActive(false);
                             flamethrowerTurretRange.SetActive(false);
                             return;
                         }
