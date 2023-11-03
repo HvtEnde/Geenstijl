@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9214581378338250731
+--- !u!114 &-4277531124206488668
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slow spider texture
+  m_Name: flame upgrade texture
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -40,11 +40,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 53e31f2b96ab19e4594ec487fdfc69bf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 59d739ce54ab88a4eabe345fc0ea1dde, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 39621c7b3ab8f9a4e8fe9bdd896cb094, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7d7386faf184d6d4e968b605d3770c03, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -64,11 +64,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 53e31f2b96ab19e4594ec487fdfc69bf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 59d739ce54ab88a4eabe345fc0ea1dde, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 4d2429caabef68b42b07f085438a4685, type: 3}
+        m_Texture: {fileID: 2800000, guid: 95ddd339ede5e7648879d88fceb64421, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
