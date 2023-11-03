@@ -1454,10 +1454,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2777621132002699840}
   - component: {fileID: 4478365450260088655}
-  - component: {fileID: 4876859649855825343}
   - component: {fileID: 5232160304485223832}
   - component: {fileID: 612906968149497028}
   - component: {fileID: 6273744088049036290}
+  - component: {fileID: 6154773512310988520}
   m_Layer: 0
   m_Name: fast spider
   m_TagString: Enemies
@@ -1504,28 +1504,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!64 &4876859649855825343
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5193049460577646211}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &5232160304485223832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,6 +1585,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &6154773512310988520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5193049460577646211}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1.5, z: 2}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!1 &5291068079311513161
 GameObject:
   m_ObjectHideFlags: 0

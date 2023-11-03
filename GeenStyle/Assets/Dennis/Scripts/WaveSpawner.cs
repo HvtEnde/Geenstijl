@@ -88,5 +88,5 @@ public class Wave
     public float timeToNextEnemy;
     public float timeToNextWave;
 
-    [HideInInspector] public int enemiesLeft;
+    public int enemiesLeft;
 }
