@@ -9666,6 +9666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992716540}
   - component: {fileID: 992716541}
+  - component: {fileID: 992716542}
   m_Layer: 0
   m_Name: TutorialBox
   m_TagString: Untagged
@@ -9724,6 +9725,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &992716542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992716539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfd9252b866d81498758cd742bf6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toturialAnim: {fileID: 0}
 --- !u!1001 &994879265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17037,52 +17051,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 176109689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1754108140
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1754108142}
-  - component: {fileID: 1754108141}
-  m_Layer: 0
-  m_Name: TutorialScript
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1754108141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754108140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47365f7809cf65b44aeff54fe63ac945, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tot: {fileID: 1398291773}
-  timer: 7.3
---- !u!4 &1754108142
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754108140}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1017.8371, y: 553.36475, z: -4.593077}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1775012036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22267,5 +22235,4 @@ SceneRoots:
   - {fileID: 176109689}
   - {fileID: 1087523856}
   - {fileID: 761800254}
-  - {fileID: 1754108142}
   - {fileID: 214469942}
