@@ -1646,7 +1646,7 @@ MonoBehaviour:
   - {fileID: 0}
   numberOfPoints: 0
   curDes: 0
-  startHealth: 7
+  startHealth: 10
   health: 0
   worthAmount: 50
   healthBar: {fileID: 8717190757834739179}
@@ -1663,7 +1663,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 1.25
-  m_Acceleration: 1.75
+  m_Acceleration: 1.5
   avoidancePriority: 50
   m_AngularSpeed: 60
   m_StoppingDistance: 0

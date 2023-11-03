@@ -2590,7 +2590,7 @@ MonoBehaviour:
   - {fileID: 0}
   numberOfPoints: 0
   curDes: 0
-  startHealth: 3
+  startHealth: 5
   health: 0
   worthAmount: 25
   healthBar: {fileID: 4309644533883906993}
