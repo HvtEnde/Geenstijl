@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject hudUI, gameOverUI;
 
-
+    #region Update
     void Update()
     {
         if (gameEnded)
@@ -22,16 +22,21 @@ public class GameManager : MonoBehaviour
             EndGame();
         }
     }
+    #endregion
 
+    #region End Game Functionality
     void EndGame()
     {
         gameEnded = true;
         hudUI.SetActive(false);
         gameOverUI.SetActive(true);
     }
+    #endregion
 
+    #region Win Level Functionality
     public void WinLevel()
     {
         PlayerPrefs.SetInt("levelReached", 2);
     }
+    #endregion
 }

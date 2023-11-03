@@ -29,6 +29,11 @@ public class TurretPlacement : MonoBehaviour
     public GameObject flamethrowerPrefab;
     public GameObject landminePrefab;
 
+    [Header("Range Effects")]
+    public GameObject regularTurretRange;
+    public GameObject sniperTurretRange;
+    public GameObject flamethrowerTurretRange;
+
     [Header("Turret Costs")]
     public int turretCost = 100;
     public int sniperCost = 125;
@@ -120,6 +125,9 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
+                    regularTurretRange.SetActive(true);
+                    regularTurretRange.transform.position = hit.point;
+
                     if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= turretCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
@@ -140,6 +148,9 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
+                    sniperTurretRange.SetActive(true);
+                    sniperTurretRange.transform.position = hit.point;
+
                     if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= sniperCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
@@ -160,6 +171,9 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
+                    flamethrowerTurretRange.SetActive(true);
+                    flamethrowerTurretRange.transform.position = hit.point;
+
                     if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= flamethrowerCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
@@ -212,6 +226,7 @@ public class TurretPlacement : MonoBehaviour
                         {
                             Debug.Log("Not enough currency");
                             mouseIndicator.SetActive(false);
+                            regularTurretRange.SetActive(false);
                             return;
                         }
                         PlayerStats.money -= turretCost;
@@ -219,6 +234,8 @@ public class TurretPlacement : MonoBehaviour
                         GameObject placedTurret = Instantiate(turretPrefab, hit.point, Quaternion.identity);
 
                         placedTurret.transform.SetParent(placementSystem.transform);
+
+                        regularTurretRange.SetActive(false);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
@@ -242,6 +259,7 @@ public class TurretPlacement : MonoBehaviour
                         {
                             Debug.Log("Not enough currency");
                             mouseIndicator.SetActive(false);
+                            sniperTurretRange.SetActive(false);
                             return;
                         }
                         PlayerStats.money -= sniperCost;
@@ -249,6 +267,8 @@ public class TurretPlacement : MonoBehaviour
                         GameObject placedTurret = Instantiate(sniperPrefab, hit.point, Quaternion.identity);
 
                         placedTurret.transform.SetParent(placementSystem.transform);
+
+                        sniperTurretRange.SetActive(false);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }
@@ -272,6 +292,7 @@ public class TurretPlacement : MonoBehaviour
                         {
                             Debug.Log("Not enough currency");
                             mouseIndicator.SetActive(false);
+                            flamethrowerTurretRange.SetActive(false);
                             return;
                         }
                         PlayerStats.money -= flamethrowerCost;
@@ -279,6 +300,8 @@ public class TurretPlacement : MonoBehaviour
                         GameObject placedTurret = Instantiate(flamethrowerPrefab, hit.point, Quaternion.identity);
 
                         placedTurret.transform.SetParent(placementSystem.transform);
+
+                        flamethrowerTurretRange.SetActive(false);
 
                         Debug.Log("Turret Build. Money Left: " + PlayerStats.money);
                     }

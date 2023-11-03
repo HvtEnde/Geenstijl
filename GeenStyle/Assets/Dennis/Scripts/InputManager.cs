@@ -15,11 +15,14 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private LayerMask placementLayerMask;
 
+    #region Awake
     private void Awake()
     {
         playerControls = new PlayerControls();
     }
+    #endregion
 
+    #region Map Position
     public Vector3 GetSelectedMapPosition()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
@@ -33,6 +36,7 @@ public class InputManager : MonoBehaviour
         }
         return lastPosition;
     }
+    #endregion
 
     #region Mem Leaks
     private void OnEnable()
