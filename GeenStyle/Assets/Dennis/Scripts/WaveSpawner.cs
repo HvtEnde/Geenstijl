@@ -11,6 +11,8 @@ public class WaveSpawner : MonoBehaviour
     private GameObject spawnPoint;
     [SerializeField] 
     GameObject winScreen;
+    [SerializeField]
+    GameObject hudUI;
 
     public Wave[] waves;
 
@@ -37,6 +39,7 @@ public class WaveSpawner : MonoBehaviour
         if (currentWaveIndex >= waves.Length)
         {
             winScreen.SetActive(true);
+            hudUI.SetActive(false);
             gameManager.WinLevel();
             return;
         }

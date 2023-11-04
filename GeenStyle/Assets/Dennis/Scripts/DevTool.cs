@@ -14,6 +14,8 @@ public class DevTool : MonoBehaviour
     [SerializeField]
     private GameObject winScreen;
     [SerializeField]
+    private GameObject hudUI;
+    [SerializeField]
     bool devToolEnabled;
 
     #region Awake
@@ -60,6 +62,7 @@ public class DevTool : MonoBehaviour
     public void InstantWin()
     {
         winScreen.SetActive(true);
+        hudUI.SetActive(false);
         PlayerPrefs.SetInt("levelReached", 2);
     }
 

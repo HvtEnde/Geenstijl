@@ -41,7 +41,7 @@ public class EnemyBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         numberOfPoints = waypointParent.transform.childCount;
         agent.autoBraking = false;
-        minDist = 1.75f;
+        minDist = 0.25f;
         curDes = -1;
         for(int i = 0; i < waypointParent.transform.childCount; i++)
         {
@@ -81,8 +81,6 @@ public class EnemyBehavior : MonoBehaviour
                 animator = GetComponent<Animator>();
                 animator.SetTrigger("Death");
 
-                GetComponent<BoxCollider>().enabled = false;
-
                 GetComponent<NavMeshAgent>().speed = 0;
                 GetComponent<NavMeshAgent>().acceleration = 100000;
                 StartCoroutine(EnemyDead());
@@ -92,7 +90,7 @@ public class EnemyBehavior : MonoBehaviour
     public IEnumerator EnemyDead()
     {
         waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
     #region Next Waypoint

@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6
-  turretCost: 200
+  turretCost: 150
   turretUpgrade: {fileID: 0}
   turretUpgraded: 1
   useBullet: 0
