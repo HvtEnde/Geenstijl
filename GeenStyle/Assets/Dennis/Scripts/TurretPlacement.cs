@@ -35,10 +35,10 @@ public class TurretPlacement : MonoBehaviour
     public GameObject flamethrowerTurretRange;
 
     [Header("Turret Costs")]
-    public int turretCost = 100;
-    public int sniperCost = 125;
-    public int flamethrowerCost = 150;
-    public int landmineCost = 75;
+    public int turretCost;
+    public int sniperCost;
+    public int flamethrowerCost;
+    public int landmineCost;
 
     #region Awake & Update
     void Awake()

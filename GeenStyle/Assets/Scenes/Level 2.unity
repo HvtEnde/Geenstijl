@@ -10103,7 +10103,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: fb5209b016ddabe4fb193ab7c7232544, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20761,8 +20761,8 @@ MonoBehaviour:
   sniperTurretRange: {fileID: 603193920}
   flamethrowerTurretRange: {fileID: 799745730}
   turretCost: 100
-  sniperCost: 150
-  flamethrowerCost: 200
+  sniperCost: 200
+  flamethrowerCost: 150
   landmineCost: 50
 --- !u!4 &2116905641
 Transform:

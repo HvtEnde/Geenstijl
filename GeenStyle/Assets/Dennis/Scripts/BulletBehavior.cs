@@ -10,9 +10,6 @@ public class BulletBehavior : MonoBehaviour
 
     public float weaponDamage;
 
-    //[Header("Particles Input")]
-    //public GameObject bulletParticle;
-
     public void Seek(Transform _target)
     {
         target = _target;
@@ -42,8 +39,6 @@ public class BulletBehavior : MonoBehaviour
 
     void HitTarget()
     {
-        //GameObject particleInstance = Instantiate(bulletParticle, transform.position, transform.rotation);
-        //Destroy(particleInstance, 2f);
 
         Damage(target);
 
