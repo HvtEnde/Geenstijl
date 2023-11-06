@@ -39,7 +39,6 @@ public class BulletBehavior : MonoBehaviour
 
     void HitTarget()
     {
-
         Damage(target);
 
         Destroy(gameObject);

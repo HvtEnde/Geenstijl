@@ -17,6 +17,7 @@ public class TurretBehavior : MonoBehaviour
     public bool useBullet = false;
     public float fireRate;
     private float fireCountdown = 0f;
+    public ParticleSystem muzzleFlash;
     public AudioSource bulletSFX;
 
     [Header("Flamethrower")]
@@ -48,6 +49,7 @@ public class TurretBehavior : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        muzzleFlash.Stop();
     }
 
     // Update is called once per frame
@@ -100,6 +102,8 @@ public class TurretBehavior : MonoBehaviour
     {
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         BulletBehavior bullet = bulletGO.GetComponent<BulletBehavior>();
+
+        muzzleFlash.Play();
 
         bulletSFX.Play();
 
