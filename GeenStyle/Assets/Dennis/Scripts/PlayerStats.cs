@@ -25,7 +25,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = "AU$" + PlayerStats.money.ToString();
+        moneyText.text = "$" + PlayerStats.money.ToString();
         lifeText.text = PlayerStats.lives.ToString();
     }
 }
