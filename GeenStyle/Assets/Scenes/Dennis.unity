@@ -9167,10 +9167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e3c633b8faa7040862ce942ef47bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 10
+  countdown: 5
   spawnPoint: {fileID: 659502045}
   winScreen: {fileID: 1787138254}
   hudUI: {fileID: 1891064692}
+  tutorialUI: {fileID: 1469501252}
   waves:
   - enemies:
     - {fileID: 4391024401136114295, guid: 276518072a2a24340a2228df84e0d570, type: 3}
