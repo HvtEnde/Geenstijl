@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 
 public class TurretPlacement : MonoBehaviour
 {
@@ -128,7 +122,7 @@ public class TurretPlacement : MonoBehaviour
                     regularTurretRange.SetActive(true);
                     regularTurretRange.transform.position = hit.point;
 
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= turretCost)
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && !hit.collider.CompareTag("Prop") && PlayerStats.money >= turretCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
                     }
@@ -151,7 +145,7 @@ public class TurretPlacement : MonoBehaviour
                     sniperTurretRange.SetActive(true);
                     sniperTurretRange.transform.position = hit.point;
 
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= sniperCost)
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && !hit.collider.CompareTag("Prop") && PlayerStats.money >= sniperCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
                     }
@@ -174,7 +168,7 @@ public class TurretPlacement : MonoBehaviour
                     flamethrowerTurretRange.SetActive(true);
                     flamethrowerTurretRange.transform.position = hit.point;
 
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && PlayerStats.money >= flamethrowerCost)
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && !hit.collider.CompareTag("Prop") && PlayerStats.money >= flamethrowerCost)
                     {
                         mouseIndicator.GetComponent<Renderer>().material.color = Color.green;
                     }
@@ -220,7 +214,7 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && !hit.collider.CompareTag("Prop"))
                     {
                         if (PlayerStats.money < turretCost)
                         {
@@ -261,7 +255,7 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && !hit.collider.CompareTag("Prop"))
                     {
                         if (PlayerStats.money < sniperCost)
                         {
@@ -302,7 +296,7 @@ public class TurretPlacement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers"))
+                    if (!hit.collider.CompareTag("Path") && !hit.collider.CompareTag("Towers") && !hit.collider.CompareTag("Prop"))
                     {
                         if (PlayerStats.money < flamethrowerCost)
                         {
