@@ -13,6 +13,8 @@ public class WaveSpawner : MonoBehaviour
     GameObject winScreen;
     [SerializeField]
     GameObject hudUI;
+    [SerializeField]
+    GameObject tutorialUI;
 
     public Wave[] waves;
 
@@ -36,6 +38,22 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        if (!tutorialUI.activeInHierarchy && readytoCountdown == true)
+        {
+            EnemySpawnAfterTutorial();
+        }
+
+        if (waves[currentWaveIndex].enemiesLeft == 0)
+        {
+            readytoCountdown = true;
+            currentWaveIndex++;
+        }
+    }
+    #endregion
+
+    void EnemySpawnAfterTutorial()
+    {
+
         if (currentWaveIndex >= waves.Length)
         {
             winScreen.SetActive(true);
@@ -56,14 +74,7 @@ public class WaveSpawner : MonoBehaviour
             countdown = waves[currentWaveIndex].timeToNextWave;
             StartCoroutine(SpawnWave());
         }
-
-        if (waves[currentWaveIndex].enemiesLeft == 0)
-        {
-            readytoCountdown = true;
-            currentWaveIndex++;
-        }
     }
-    #endregion
 
     #region SpawnWave
     private IEnumerator SpawnWave()
