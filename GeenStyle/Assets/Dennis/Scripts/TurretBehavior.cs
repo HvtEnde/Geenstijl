@@ -49,7 +49,6 @@ public class TurretBehavior : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        muzzleFlash.Stop();
     }
 
     // Update is called once per frame
@@ -57,6 +56,7 @@ public class TurretBehavior : MonoBehaviour
     {
         if (target == null)
         {
+
             if (useFlamethrower)
             {
                 if (lineRenderer.enabled)
@@ -76,8 +76,11 @@ public class TurretBehavior : MonoBehaviour
 
         if (useBullet)
         {
+            muzzleFlash.Stop();
+
             if (fireCountdown <= 0f)
             {
+                muzzleFlash.Play();
                 ShootTurret();
                 fireCountdown = 1f / fireRate;
             }
@@ -87,6 +90,7 @@ public class TurretBehavior : MonoBehaviour
 
         if (useFlamethrower)
         {
+
             FlamethrowerShoot();
         }
 
@@ -102,8 +106,6 @@ public class TurretBehavior : MonoBehaviour
     {
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         BulletBehavior bullet = bulletGO.GetComponent<BulletBehavior>();
-
-        muzzleFlash.Play();
 
         bulletSFX.Play();
 

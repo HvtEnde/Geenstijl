@@ -8,6 +8,7 @@ TagManager:
   - Path
   - Towers
   - DeadEnemy
+  - Prop
   layers:
   - Default
   - TransparentFX
