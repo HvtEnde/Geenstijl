@@ -23,6 +23,7 @@ public class EnemyBehavior : MonoBehaviour
     public float health;
     public int worthAmount;
     public Image healthBar;
+    public AudioSource deathSound;
 
     [SerializeField]
     private float minDist;
@@ -89,6 +90,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     public IEnumerator EnemyDead()
     {
+        deathSound.Play();
         waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
